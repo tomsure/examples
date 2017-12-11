@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: '1111' });
 });
 
-router.get('/mockjs', function(req, res, next) {
+router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');
 	var data = Mock.mock({
 	    'list|1-10': [{
