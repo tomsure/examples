@@ -1,0 +1,12 @@
+  
+  
+  supervisor  热部署在项目中使用步骤：
+
+1、在 nodejs 目录下输入express myapp命令，此时快速生成一个 名为myapp的项目目录
+2、使用cd命令进入 这个目录，并输入命令   npm install  这一步是用来安装应用所需要的依赖；
+4、安装   supervisor： npm install supervisor -g
+3、启动项目   由于生成器生成的项目启动时候运行的时  node ./bin/www 这条命令，所以安装完supervisor后项目启动命令为
+         supervisor ./bin/www
+		    
+		    
+		     

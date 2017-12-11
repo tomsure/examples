@@ -1,0 +1,16 @@
+项目名称：express基本使用
+
+实现步骤：
+        1、在nodejs下创建空目录，并使用cd进入目录
+        2、输入 npm init 命令初始化项目；
+        3、此步骤会将express 安装并保存到依赖表中，此时app目录下会多出一个node_modules目录，打开这个目录可以看到，里面是一个名为"Express"的目录；
+        4、启动项目： 1,输入 node app.js 命令后回车启动项目应用
+                     2.在浏览器打开输入 'http://localhost:3000
+                                      可以看到页面会显示出app.js 文件中
+				       app.get('/', function (req, res) {
+							  res.send('Hello World!');
+							});
+							
+				          这段函数的内容:  Hello World!
+
+          从github导出的项目时，项目启动目录：E:\gitHub\examples\nodejs\nodeServer\1.express-basic 

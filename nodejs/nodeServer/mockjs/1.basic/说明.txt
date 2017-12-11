@@ -1,0 +1,23 @@
+mockjs在express 基本使用（这里只会在命令行中输出数据）:
+  一、创建项目
+  二、新建mock 配置文件：在mockjs 官网使用说明中nodejs 部分，复制代码到这个文件中，代码内容是：
+     var Mock = require('mockjs');
+    var data = Mock.mock({
+    'list|1-10': [{
+        'id|+1': 1
+    }]
+   });
+  console.log(JSON.stringify(data, null, 4))
+  
+ 
+  三、安装mockjs 到项目中： npm install mockjs --save
+  
+  四、 启动项目： 输入 node + 第二步新建的js 文件名。 此时会有json格式的数据打印到命令行
+  
+  
+       导出时运行命令：
+       1、进入目录E:\gitHub\examples\nodejs\nodeServer\mockjs\1.basic>
+       2、执行启动：node app_custom.js
+       
+       
+    
