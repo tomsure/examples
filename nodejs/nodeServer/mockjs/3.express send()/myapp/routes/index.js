@@ -6,17 +6,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: '1111' });
 });
 
-router.get('/mockjs', function(req, res, next) {
-	var Mock = require('mockjs');
-	var data = Mock.mock({
-	    'list|1-10': [{
-	        'id|+1': 1
-	    }]
-	}); 
-    var ret= JSON.stringify(data, null, 4)
-    console.log(ret)
-    res.render('index', { title: ret });
-});
+//router.get('/mockjs', function(req, res, next) {
+//	var Mock = require('mockjs');
+//	var data = Mock.mock({
+//	    'list|1-10': [{
+//	        'id|+1': 1
+//	    }]
+//	}); 
+//  var ret= JSON.stringify(data, null, 4)
+//  console.log(ret)
+//  res.render('index', { title: ret });
+//});
 
 router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');
@@ -29,4 +29,6 @@ router.get('/mockapi', function(req, res, next) {
     console.log(ret)
     res.send(ret);
 });
+
+
 module.exports = router;
