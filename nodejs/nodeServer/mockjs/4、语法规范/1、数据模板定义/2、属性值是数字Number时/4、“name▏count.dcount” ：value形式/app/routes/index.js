@@ -9,7 +9,7 @@ res.render('index', { title: '1111' });
 router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');
 	var data = Mock.mock({
-	    'list|5.6': 1
+	    'list|5.6': 1,
 //       'name|count.dcount':value,表示小数点前面是固定的数值且小数点后面是固定的六位的随机数,例如
 //                 'list|5.6': 1可能产生的数据是:
 //                  'list': 5.123213
