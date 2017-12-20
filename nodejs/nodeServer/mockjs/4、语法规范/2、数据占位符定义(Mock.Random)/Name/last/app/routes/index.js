@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');
 	var data = Mock.mock({
-	    email:'@EMAIL'
+	    laseName:'@last()'  //ladt()方法生成一个随机的英文姓
 	}); 
     var ret= JSON.stringify(data, null, 4)
     console.log(ret)

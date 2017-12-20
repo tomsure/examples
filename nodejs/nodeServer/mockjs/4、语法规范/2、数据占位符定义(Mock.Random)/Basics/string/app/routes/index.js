@@ -12,7 +12,7 @@ router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');
 	var data = Mock.mock({
 //		        string()方法返回随机的字符串,并可以设置返回指定的随机字符串
-         //      string( length )  返回制定长度的字符串
+//                string( length )  返回制定长度的字符串
          //     例如:
         //            string:'@string(12)'  //返回长度为12的字符串
 	    
