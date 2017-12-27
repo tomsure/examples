@@ -8,16 +8,16 @@ res.render('index', { title: '1111' });
 
 router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');
+//	 "name|+step":value 这种形式表示模拟数组中递增的数字,意识是说模拟的value值需要是在一个随机的数组中的数组元素, "name|+step"中的step就是递增的数值,也就是每次增加多少，value就是递增的数字的基数，也就是模拟的数字从这个数字开始增加，例如这里：
 	var data = Mock.mock({
-	    'list|5': "a"
-//   "name|cpunt:value"这种形式表示name的值是固定的，"name|count:value"这里的count只的是设置的vlaue的值每次重复的固定个数，例如这里：
-//         上面'list|5': "a",表示每次产生的json数据的name都是list,value是a出现5次形成的value,例如:
-//                       每次运行后产生的数据:
-//                           'list':'aaaaa',第一次运行
-//                           'list':'aaaaa',第二次运行
-//                           'list':'aaaaa',第三次运行
-//                            ...
-//                          这样每次运行,产生的数据都是固定的5次a组成的value
+	    'list|3-6':[{
+	    	"ss":'aa',
+	    	"number|+10":100
+	    }]
+	    
+	    //"number|+10":100 ，表示以100为基数，模拟数数字每次+10
+	    //由于需要有多个数组元素才会出现递增数字，所以模拟的数组也需要有多个数组元素，也就是这里设置了'list|3-6'，表示生成3-6个数组元素
+
 	}); 
     var ret= JSON.stringify(data, null, 4)
     console.log(ret)

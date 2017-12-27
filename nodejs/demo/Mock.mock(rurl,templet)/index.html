@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../dist/jquery-2.1.4/jquery.min.js"></script>
+	
+	
+	<body>
+		<div class="dv">
+			
+		</div>
+		<button id="btn">点击获取</button>
+	</body>
+	<script type="text/javascript">
+//		注意设置不在appserv服务器内,这里要设置8020的端口
+		$(function(){
+			$('#btn').click(function(){
+				var nurl='http://192.168.1.102:3000/mockapi'
+				$.ajax({
+					url:nurl,  //注意这里用http，如果是https需要具体了解使用方法                           
+					async:false,
+					type:'GET',
+					dataType:'jsonp',
+					cache:false,
+					jsonp:'callback',
+					success:function(data){
+						console.log('aa'+':'+data)
+						
+					},
+					error:function(err){
+						console.log(err.statusText)
+						
+					}
+				})
+			})
+		})
+	</script>
+</html>

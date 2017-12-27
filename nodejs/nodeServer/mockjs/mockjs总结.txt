@@ -1,0 +1,2 @@
+mock.step()、Mock.mock( rurl?, rtype?, template|function( options ) )只学了一部分
+Mock.valid()、Mock.toJSONSchema()没学
