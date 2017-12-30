@@ -1,0 +1,1 @@
+webpack和vue都是基于nodejs开发，所以创建项目后需要使用npm进行初始化，初始化就是创建web目录后进入到到目录中使用 npm init或者 npm init -y命令；
