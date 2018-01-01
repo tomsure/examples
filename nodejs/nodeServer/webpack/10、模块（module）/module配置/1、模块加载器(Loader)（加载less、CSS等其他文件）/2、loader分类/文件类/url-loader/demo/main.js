@@ -1,0 +1,3 @@
+
+require('./fn.js').aa
+ 

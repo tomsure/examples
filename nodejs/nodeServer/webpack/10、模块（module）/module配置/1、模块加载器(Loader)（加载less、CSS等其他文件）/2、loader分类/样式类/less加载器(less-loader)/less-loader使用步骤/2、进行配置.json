@@ -1,0 +1,12 @@
+   module:{
+		rules:[
+		
+		    {
+		    	test:/\.less$/,   //设置后缀正则
+		    	loader:'style-loader!css-loader!less-loader'
+		    	
+//		    	  设置loader,这里必须设置三个loader才可以
+		    }
+		]
+	} 
+             在rules中和配置css-loader一样，第一步设置test第二部设置loader

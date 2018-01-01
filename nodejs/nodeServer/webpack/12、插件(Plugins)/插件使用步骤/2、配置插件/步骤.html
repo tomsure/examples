@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		1、在webpack.config.js 文件顶部，加载webpack:
+		   var webpack = require('webpack')
+		   
+		2、导入安装的插件
+		  var pluginsName = require('插件名称')
+		  
+		  
+		3、在  webpack.config.js中添加plugins选项，它的值是一个数组：
+		    plugins:[
+		         new pluginsName({})   使用new关键字实例化插件，后面是插件相关配置，可以在括号里面根据不同插件配置不同选项,注意这里使用new实例化的时候，名字需要和顶部引入插件时候的变量名相同
+		    
+		         ]
+	</body>
+</html>
