@@ -11,13 +11,15 @@ var htmlWebpackPlugin=require('html-webpack-plugin');  //这里是引入插件�
  	},
  	  plugins: [
    	  new htmlWebpackPlugin({
-   	  	   title:'aaaaa',
-   	  	   filename:'./demo/demo.html'
+   	  	   title:'这是a.html',
+   	  	   filename:'a.html',
+   	  	   template:'templet/templet.html'
    	  }),  
  	  new htmlWebpackPlugin({
- 	  	title:'这是模板文件',
+ 	  	title:'这是b.html',
+ 	  	filename:'b.html',
  	  	template:'templet/templet.html' ,
- 	  	filename:'./html/demo.html'
+ 	  	
  	     
  	  })
  	  

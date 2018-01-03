@@ -1,0 +1,6 @@
+
+			上面模板文件中的<%= htmlWebpackPlugin.options.tangxuName %>是webpack使用的ejs(一种模板引擎)语法，<%= =>是语法使用的符号，里面
+的htmlWebpackPlugin.options.tangxuName中的‘htmlWebpackPlugin’是webpack.config.js中引入html-webpack-plugin插件时候设置的变量名，options指的就是在配置文件“plugins”选项中实例化这个插件时候大括号这个对象，它的属性就是大括号中设置的各种选项，可以是json格式的各种字符串，其中固定的选项在webpack文档中有指出，都有各自的功能；
+                   例如上面的<%= htmlWebpackPlugin.options.tangxuName %>中的htmlWebpackPlugin.options.tangxuName指的就是这个项目配置文件中的tangxuName的值，也就是“汤旭”，所以，这里页面就会显示“汤旭”
+                   
+         注意：由于模板文件中使用html注释打包时候会报错，所以讲注释写在这里  

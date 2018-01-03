@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+    如果有不同的页面需要引入各自不同的js 文件和公共的js文件，操作步骤如下：
+     
+  
+  1、在模板中设置js引入：
+    .在script标签的src属性中按照ejs模板引擎语法设置，例如：<%= htmlWebpackPlugin.files.chunks.a.entry %>，这里的chunks.a.entry就表示配置文件中的entry选项中入口文件的kay值a，所以具体页面就写配置文件 entry中具体入口文件的kay值，由于是多个不同页面引入不同js文件，所以目前方法是使用不同的模板，在模板的script标签中用ejs语法设置src；
+   
+  2、配置文件中的output中的fliename不能使用固定的名称，因为是由多个页面，打包后的文件是放在同一个目录中的，相同名称会造成名称冲突，会报错，所以可以在.js前面设置[hash]或者[name]；
+  3、由于是生成多个页面，所以要多次实例化html插件，在实例化参数选项中设置页面对应的模板；
+  4、 webpack.config.js配置plugin实例化html-webpack-plugin插件的时候设置inject选项设置为false，这一步用于设置不将打包后的一个单独文件引入页面；
+  
+  5、公共文件可以在模板中的script设置同一个入口文件的src
+    

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>这是模板文件</title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		
+			由于htmlWebpackPlugin是一个对象，所以可以通过js遍历的方式将这个对象所有的选项遍历出来，遍历语法个js一样，但是需要插入ejs语法，可以了解一下ejs知识点   
+			<br/>
+			<br/>
+		下面的语句将htmlWebpackPlugin对象的files和options属性遍历出来，可以查看打包后的html文件
+		<br/>
+		<br/>
+		---------------------------------------------------------
+		<br/>
+		<br/>
+		
+		htmlWebpackPlugin.files属性包涵以下选项：<br/>
+		
+				
+				publicPath : ""<br/>
+				
+				
+				chunks : {"main":{"size":154,"entry":"build.js","hash":"a0a5fa31ad9a321d9d5c","css":[]}}<br/>
+				
+				
+				js : ["build.js"]<br/>
+				
+				
+				css : []<br/>
+				
+				
+				manifest : undefined<br/>
+				
+				
+        <br/>
+        <br/>
+        上面的语句遍历出files选项 :<br/>
+        从上面遍历出的信息可以看出有一个chunks选项:<br/>
+          chunks : {"main":{"size":154,"entry":"build.js","hash":"a0a5fa31ad9a321d9d5c","css":[]}}
+     <br/>
+    <br	/>
+     这里面的main包含一个entry属性选项，这个就是打包后的js文件，css文件就是打包后的css文件，所以可以在模板页面中需要引入css或者js的地方直接使用ejs语法引入这个选项例如：<br/>
+    ' script src=''>script'
+    <br/>
+     由于这里只是说明，script标签会解析，所以就没有使用正确符号
+        <br/>
+        <br/>
+            
+            
+            ----------------------------------------
+         <br/>
+        <br/>    
+        htmlWebpackPlugin.files属性包涵以下选项：<br/>
+				
+				template : undefined<br/>
+				
+				
+				filename : undefined<br/>
+				
+				
+				hash : undefined<br/>
+				
+				
+				inject : undefined<br/>
+				
+				
+				compile : undefined<br/>
+				
+				
+				favicon : undefined<br/>
+				
+				
+				minify : undefined<br/>
+				
+				
+				cache : undefined<br/>
+				
+				
+				showErrors : undefined<br/>
+				
+				
+				chunks : {"main":{"size":154,"entry":"build.js","hash":"a0a5fa31ad9a321d9d5c","css":[]}}<br/>
+				
+				
+				excludeChunks : undefined<br/>
+				
+				
+				title : undefined<br/>
+				
+				
+				xhtml : undefined<br/>
+				
+				
+				tangxuName : undefined<br/>
+				
+				
+            
+        <br/>
+        <br/>      
+     上面的语句遍历出options选项
+
+             
+		
+	<script type="text/javascript" src="build.js"></script></body>
+</html>
