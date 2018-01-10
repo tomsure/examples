@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../../../dist/vue/dist/vue.min.js">
+		
+	</script>
+	<script type='text/javascript'>
+	</script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var vm=new Vue({
+				el:'#dv',
+				data:{
+					a:1
+				},
+				computed:{
+					b:function(){
+						return this.a+100  //返回a的值+100
+					}
+					
+				}
+			})
+			
+			document.getElementsByTagName('button')[0].onclick=function(){
+			  vm.a=100
+		}
+		}
+		
+		
+	</script>
+	<body>
+		<div id="dv">
+			
+			a：{{a}} <br/>
+			b：{{b}} <br/>
+			
+			
+		</div>
+		<button>点击测试</button>
+	</body>
+	    <!--计算属性的之必须在函数中使用return关键字返回-->
+	
+</html>

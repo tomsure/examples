@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="dv">
+		    a:	{{a}} <br />
+		    b：	{{b}}   <br />
+		    c:	{{c}}
+		</div>
+	</body>
+	<script type="text/javascript" src="../../../dist/vue/dist/vue.min.js">
+		
+	</script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:'#dv',
+			data:{
+				a:1,
+				b:2
+			},
+			computed:{
+				c:function(){   
+					return '你好'
+				}
+				
+			}
+			
+			
+
+		})
+		
+		
+		document.onclick=function(){
+			vm.a=100
+		}
+		
+//		通过事件或者其他方法可以改变data中vue属性的值
+	</script>
+	
+	
+</html>

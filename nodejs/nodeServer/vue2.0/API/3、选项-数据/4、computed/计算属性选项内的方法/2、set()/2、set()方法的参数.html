@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../../../../../dist/vue/dist/vue.min.js">
+		
+	</script>
+	<script type='text/javascript'>
+	</script>
+	<script type="text/javascript">
+		window.onload=function(){
+		var vm=new Vue({
+				el:'#dv',
+				data:{
+					a:1,
+					
+				},
+				computed:{
+					b:{
+
+						set:function(vel){
+						     vel=100   //这里设置了参数,所以最终会以这个值进行计算
+							 this.a=vel                                        
+						}
+					}
+				}
+			})
+                  document.onclick=function(){  
+                  	vm.b=vm.a+1     
+                  	console.log(vm.a)    
+                  	
+//                	如果set()方法的vel参数没有在函数内赋值,则这里的vm.b的值就是传到set()函数中去的vel的值
+                  }
+		}
+	</script>
+	<body>
+		<div id="dv">
+			{{a}} <br />
+			{{b}}
+		</div>
+	</body>
+	
+	    <!--set方法函数中可以设置参数，如果set()函数中没有设置参数的值，而在执行计算属性是时候给计算属性赋了值，则此时，set()里面的参数的值就和这个值相等，例如上面例子中，点击页面的时候
+	          vm.b=200
+	        如果函数set 中没有设置vel=100，则vel的值就是200
+	        如果函数set中参数舍设置了值，则就参数就会取函数里面设置的值，即使使用vm设置了计算属性的值，也只会取set方法里面设置的值  -->
+	          
+	
+</html>

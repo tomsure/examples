@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../../../../dist/vue/dist/vue.min.js">
+		
+	</script>
+	<script type='text/javascript'>
+	</script>
+	<script type="text/javascript">
+		window.onload=function(){
+		var vm=new Vue({
+				el:'#dv',
+				data:{
+					a:1,
+					
+				},
+				computed:{
+					b:{
+						get:function(){
+							
+						     return this.a+2  
+		     
+						},
+						set:function(vel){
+						    
+                                this.a=vel
+						}
+					}
+				}
+			})
+                  document.onclick=function(){
+                  	vm.b=100
+                  	
+                  }
+		}
+	</script>
+	<body>
+		<div id="dv">
+			{{a}} <br />
+			{{b}}
+		</div>
+	</body>
+	
+	
+	
+	
+</html>

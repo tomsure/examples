@@ -32,11 +32,12 @@
 //		computed设置的计算属性默认调用的就是get方法,所以不需要直接设置计算属性的时候,就直接在计算属性名称后面写函数即可例如:
 		
 //		computed:{
-//			aa:function(){
-//				return this.a+1  //设置计算属性的值就是普通属性a再加一个1
+//			b:function(){
+//				return this.a+100  //设置计算属性的值就是普通属性a再加一个1
 //			}
 //		}
 //		
+//      此时,b的值就是和a计算后的值,也就是101
 	</script>
 	<body>
 		<div id="dv">
