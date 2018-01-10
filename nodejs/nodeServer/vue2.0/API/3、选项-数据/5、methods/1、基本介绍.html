@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv" v-on:click="add()">
+			{{msg}}
+		</div>
+	</body>
+	<script>
+		
+			 var vm=new Vue({
+		 	 el:"#dv",
+		 	 data:{
+		 	 	msg:'点我测试',
+		 	 	
+		 	 },
+		 	 methods:{
+		 	 		add:function(){
+		 	 			alert(1)
+		 	 		}
+		 	 	}
+		 })
+		
+		 
+//		 methods是实例化后的vue对象的方法,可以在事件中调用,也可以在其他指定环境下调用
+	</script>
+</html>

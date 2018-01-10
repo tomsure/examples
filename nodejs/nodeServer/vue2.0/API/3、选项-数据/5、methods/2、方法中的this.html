@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv" v-on:click="add()">
+			{{msg}}
+		</div>
+	</body>
+	<script>
+		  new Vue({
+		  	  el:"#dv",
+		  	  data:{
+		  	  	msg:'1',
+		  	  	
+		  	  },
+		  	  methods:{
+		  	  	add:function(){
+		  	  		this.msg ++
+		  	  	}
+		  	  }
+		  	  
+		  })
+		  
+	</script>
+</html>

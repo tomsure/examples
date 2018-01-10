@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv" v-on:click="num()">
+			{{msg}}
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#dv',
+			data:{
+				msg:'123'
+			},
+			methods:{
+				num:function(){
+					alert(this.msg)  //123
+					alert(vm.msg)    //123
+				}
+			}
+		})
+		     
+//		     从上面例子中可以看出methods 中设置的方法中的this指的是指的就是vue实例对象,data中的选项的key值就是vue实例对象的属性;
+	</script>
+</html>

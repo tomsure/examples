@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			{{
+				msg
+			}}
+		</div>
+		<div id="dv1">
+			
+		</div>
+	</body>
+	<script >
+		
+//		  当data的值为对象时候:
+		var vm=new Vue({
+		 	el:'#dv',
+		 	data:{
+		 		msg:'data数据'
+		 	}
+		 })
+		 
+		 
+//		  vue实例化的时候,Vue()方法里面的data属性用于对页面元素进行数据绑定,它的值可以是对象,也可以是函数,当创建组件的时候,data选项的值必须是函数,（这里暂时不学组件）；
+//       data属性是对象的时候,里面设置的属性或者方法可以在页面上绑定,具体是 使用{{}}写在元素中,符号内就写data中的任何一个所需要的选项key,例如这里:
+//         将data中的mas绑定大到页面的dv元素中,页面就会显示data中的msg的值--"data数据"
+
+      
+		 
+	</script>
+</html>
