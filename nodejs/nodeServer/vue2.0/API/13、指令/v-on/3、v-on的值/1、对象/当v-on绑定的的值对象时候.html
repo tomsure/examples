@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+	<script src="../../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		
+		<div id="dv" v-on="{mouseover:alert1,click:alert2}"> {{msg}} </div>
+		
+	</body>
+	<script>
+		  new Vue({
+		  	   el:'#dv',
+		  	   data:{
+		  	   	msg:'div1'
+		  	   },
+		  	   methods:{
+		  	   	alert1:function(){
+		  	   		console.log(1)
+		  	   	},
+		  	   	alert2:function(){
+		  	   		console.log(2)
+		  	   	}
+		  	   }
+		  })
+//		     对象语法可以在v-on的值中使用对象的形式写多个事件,其中key 值写事件名,value写事件回调函数，这个特性需要在2.4以上版本
+	</script>
+</html>

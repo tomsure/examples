@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	<style type="text/css">
+		#dv{
+			width: 200px;
+			height: 200px;
+			background-color: deepskyblue;
+		}
+		#dv1{
+			width: 150px;height: 150px;
+			background-color: firebrick;
+			
+		}
+		#dv2{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+		
+	</style>
+	<body>
+		<div id="dv" @click.stop="console.log(1)">
+			<div id="dv1">
+				<div id="dv2">{{msg}}</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		  var vm=new Vue({
+		  	   el:'#dv',
+		  	   data:{
+		  	   	msg:'aaaaa'
+		  	   }
+		  })
+		
+	</script>
+</html>
