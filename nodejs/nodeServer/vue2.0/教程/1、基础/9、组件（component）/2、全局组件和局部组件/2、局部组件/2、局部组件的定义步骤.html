@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<my-weather></my-weather>
+		</div>
+	</body>
+	<script>
+		 
+		   var myComponent={
+		   	template:'<div>今天不下雨，出去玩吧</div>'
+		   }
+		 
+		  new Vue({
+		  	 el:'#dv',
+		  	
+		  	 components:{
+		  	 	'my-weather':myComponent
+		  	 }
+		  })
+	</script>
+	     <!--1、在html要和vue实例绑定的div中定义一个自定义的html格式的标签；
+	     2、在js中定义一个对象，对象内设置一个基本的template选项，设置组件的模板内容；
+	     3、实例化vue，在实例化中绑定vue和元素,并设置components选项注册组件，里面的key值就是html中设置的自定义html格式标签，value就是上一步定义的对象-->
+	     
+	     
+	
+</html>

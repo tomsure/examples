@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<today-weather></today-weather>
+		</div>
+		  <div>
+		  	
+		  	
+		  </div>
+	</body>
+	<script>
+		 Vue.component('today-weather',{
+		 	template:"<div style='color:red;'>今天下雨出不去</div>"
+		 })
+		  new Vue({
+		  	 el:'#dv',
+		  	 
+		  })
+	</script>
+	<!--什么是组件：
+	    组件就是页面上的一小块要去内容，完成一个小的页面功能,组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。
+		组件是一个对象-->
+	
+	
+	    <!--组件（全局组件）的定义步骤如下：
+	      1、定义一个div id任意；
+	      2、在这个div中设置一个任意成对的html格式的标签；
+	      3、在js中使用Vue.componment()方法注册全局组件，这个方法第一个参数就是在div中自定义的html格式的标签，第二个参数是json格式的对象，里面可以填写多个选项，其中必填项是template,这个就是组件的内容，是一个html元素，可以设置各种html元素；
+	      4、实例化vue对象，绑定vue的元素；
+	      5、注意：全局组件注册必须放在实例化之前-->
+	
+</html>

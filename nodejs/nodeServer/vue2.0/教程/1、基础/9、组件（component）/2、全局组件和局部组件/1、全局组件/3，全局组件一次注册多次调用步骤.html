@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<today-weather></today-weather>
+			<!--第一次使用-->
+		</div>
+		  <div id="dv1">
+		  	 <today-weather></today-weather>
+		  	 <!--第二次使用-->
+		  	  
+		  </div>
+	</body>
+	<script>
+		 Vue.component('today-weather',{
+		 	template:"<div style='color:red;'>今天下雨出不去</div>"
+		 })
+		  new Vue({
+		  	 el:'#dv',
+		  	 //第一次使用
+		  })
+		  new Vue({
+		  	el:'#dv1'
+		  	//第二次使用
+		  })
+	</script>
+	       <!--全局组件可以多次调用，使用步骤如下：
+	        1、使用Vue.component()方法注册；
+	        2、在多次使用的时候，就多次实例化vue,绑定不同的元素进行实例化；
+	        3、在绑定的不同vue实例的html元素中放置在第一步注册时候定义的自定义的html标签-->
+	
+</html>
