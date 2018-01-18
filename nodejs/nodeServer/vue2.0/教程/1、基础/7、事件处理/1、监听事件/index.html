@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv" v-on:click="ad">
+			{{msg}}
+		</div>
+	</body>
+	<script>
+		 var vm=new Vue({
+		 	  el:'#dv',
+		 	  data:{
+		 	  	msg:'aaaaa'
+		 	  },
+		 	  methods:{
+		 	  	ad:function(){
+		 	  		document.write("111")
+		 	  	}
+		 	  }
+		 })
+		 
+		 
+//		 监听事件使用v-on
+	</script>
+</html>

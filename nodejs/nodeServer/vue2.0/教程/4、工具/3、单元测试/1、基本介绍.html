@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			{{'aaaa'}}
+			  
+			 
+			 <!--vue的模板中的数据除了可以取data中的数据，也可以直接在{{}}符号中写字符串数据-->
+			 <!--当写了多种数据之后，可以使用模板中的过滤器对数据进行处理，例如：-->
+			 {{msg | capitalize}}
+		</div>
+	</body>
+	<script>
+		  new Vue({
+		  	 el:'#dv',
+		  	 data:{
+		  	 	msg:'aaaaa'
+		  	 }
+		  })
+	</script>
+</html>

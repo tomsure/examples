@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		.w{
+			width: 100px;
+			
+		}
+		.h{
+			height: 100px;
+		}
+		.bg{
+			background-color: red;
+		}
+	</style>
+	<body>
+		
+		<div id="dv" :class="{w:a,h:b,bg:c}" >  <!--这里的w,h,bg值的就是生成的class名称-->
+			 
+		        你好 vue   
+		</div> 
+		 
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 			el:'#dv',
+		   	 			data:{
+		   	 				a:true,
+		   	 				b:true,
+		   	 			    c:true
+		   	 			    //这里的a,b,c分别对应html中{}中的w,f,bg
+		   	 			}
+                     })
+              
+//               使用json格式设置class的时候,还可以使设置的类名和data中设置的数据相关联,这样方便动态操作具体某个class是否生效,具体用法是:
+//                将html元素中设置class的位置中的{}中的value设置为data中设置的数据的key名,在data中将这些数据的kay值对应的value设置为true或者false,这样的话就可以动态操作class是否生效
+
+
+	</script>
+</html>

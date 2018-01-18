@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			请选择你喜欢的武术明星：<br/><br/>
+			成龙： <input type="checkbox" v-model="msg" value="成龙" />
+			李连杰 <input type="checkbox" v-model="msg" value="李连杰"/>
+			李小龙 <input type="checkbox" v-model="msg" value="李小龙"/>
+			武僧一龙 <input type="checkbox" v-model="msg" value="武僧一龙"/>
+			 <br/>
+			 <br/>
+			   您选择喜欢的明星有：{{msg}}
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#dv',
+			data:{
+				msg:[]
+				
+			}
+		})
+    
+//      v-model还可以和checkbox进行绑定,绑定后选择复选框后,可以获取到选择后的checkbox并生成一个数组;
+//      使用方法:
+//        1,把每个checkbox设置v-model指令,与data中设置的数据绑定;
+//        2,data中的数据设一个空数组;
+//        3,在页面上使用{{}}模板,里面绑定data中设置的数组数据的key值
+	</script>
+	
+</html>

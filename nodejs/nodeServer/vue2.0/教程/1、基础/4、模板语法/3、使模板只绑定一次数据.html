@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		  
+		  <div id="dv">
+		  	<input type="" v-model="msg" name="" id="" value="" />
+		  	<br />
+		  	  {{msg}}
+		  	<br />
+		  	     <div  v-once="msg">
+		  	     	{{msg}}  <!--vue 1.0中直接使用{{*msg}}这样的语法，不用v-once-->
+		  	     </div>
+		  </div>
+		   
+		   <!--如果元素中使用多个模板，某一个模板只绑定一次，就是当input中的value改变的时候，其他的模板数据改变，需要不改变的不改变，则可以给不需要改变数据的模板元素使用父元素包裹，然后使用v-once，里面写绑定的数据，这样就只会绑定一次，当其他数据改变的时候，这个模板数据不会改变-->
+		   
+	</body>
+	<script>
+		   new Vue({
+		   	  el:"#dv",
+		   	  data:{
+		   	  	msg:'aaaa'
+		   	  }
+		   })
+		   
+	</script>
+</html>

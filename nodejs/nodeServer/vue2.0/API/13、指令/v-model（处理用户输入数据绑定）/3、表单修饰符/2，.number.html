@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			  
+			  输入金额（自动转换为number）：<input type="number" v-model.number="jine" id="num" /><br />
+			  输入的金额是：{{jine}}  <br /><br /> 
+			  输入金额(不是number类型的返回null)  <input type="number" v-model.number="jine" />  <br />
+			  输入的金额是：<p>{{jine}}</p>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#dv',
+			data:{
+				jine:''
+				
+			}
+		})
+    
+        
+          var num=document.getElementById("num")
+             num.onblur=function(){
+             	console.log(typeof num.value)
+             }
+     
+	</script>
+	   
+	     <!--v-model.number用于将用户输入的转换为number类型，因为input元素输入的值都是string类型，即使是type=number,同样是string可以在这里实验；
+	     当使用v-model后，如果type=number的时候，用户输入的数字则会转换成number类型的数据；
+	   如果输入的数据中包含字符串，则不会再{{}}中同步渲染-->
+</html>

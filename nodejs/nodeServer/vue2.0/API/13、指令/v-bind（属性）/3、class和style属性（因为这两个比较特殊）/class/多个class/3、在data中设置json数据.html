@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		.w{
+			width: 100px;
+			
+		}
+		.h{
+			height: 100px;
+		}
+		.bg{
+			background-color: red;
+		}
+	</style>
+	<body>
+		
+		<div id="dv" :class="jsonData" >  
+			 
+		        你好 vue   
+		</div> 
+		 
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 			el:'#dv',
+		   	 			data:{
+		   	 				jsonData:{
+		   	 					w:true,
+		   	 				    h:true,
+		   	 			        bg:true
+		   	 				}
+		   	 			    
+		   	 			}
+                     })
+              
+//          可以将:class或者v-bind的值设置为一个json的键名(key值),然后将这个json设置在data中,data中的这个json数据里面,再来设置每个键值对,其中key就是实际的class名,value就是true或者false,value为true的时候才会显示
+
+
+	</script>
+</html>

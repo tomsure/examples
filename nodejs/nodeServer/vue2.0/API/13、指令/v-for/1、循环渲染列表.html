@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			<ol>
+				<li v-for="game in games">
+					游戏名称：{{game.title}} <br/>
+					游戏编号：{{game.num}}
+				</li>
+			</ol>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#dv',
+			data:{
+				games:[
+				  {title:"王者争霸",num:'01'},
+				   {title:"王者农药",num:'02'},
+				    {title:"QQ飞车",num:'03'}
+				
+				]
+			}
+		})
+    
+
+	</script>
+	 <!--v-for 用于对数据进行循环并将数据渲染在页面上原理和for循环遍历类似-->
+</html>

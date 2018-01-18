@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	
+	<body>
+		<input id="text1" type="text" @keydown.q="console1" />  
+		<input id="text2" type="text" @keydown.w="console2" />
+		<input id="text3" type="text" @keydown.e="console3" />  
+		<input id="text4" type="text" @keydown.r="console4" />
+		<input id="text5" type="text" @keydown.t="console5" />  
+		                               <!--上面是自定义的键盘名绑定事件函数-->
+		
+	</body>
+	 <!--每个键盘按键都有键盘码，vue封装了一部分的键盘码，我们可以自定义的方式封装和vue封装的如enter、left、left这样的键盘名称，用来绑定事件函数-->
+	<script>
+		Vue.config.keyCodes.q=81;   //q键
+		Vue.config.keyCodes.w=87;   //w键
+		Vue.config.keyCodes.e=69;    //e键
+		Vue.config.keyCodes.r=82;    //r键
+		Vue.config.keyCodes.t=84;     //t键
+		
+		
+//		  自定义绑定键盘按键的方法是使用Vue.config.keyCodes属性来设置,将自定义的按键名赋给这Vue.config.keyCodes对向,在将键盘码设为它的值即可
+//        使用的时候,自定义的键盘名称加在事件的后面即可
+		
+		  new Vue({
+		  	   el:'#text1',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console1:function(){
+		  	   	  	 console.log('您按下了q键')
+		  	   	  }
+		  	   }
+		  }) 
+		   new Vue({
+		  	   el:'#text2',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console2:function(){
+		  	   	  	 console.log('您按下了w键')
+		  	   	  }
+		  	   }
+		  })
+		   new Vue({
+		  	   el:'#text3',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console3:function(){
+		  	   	  	 console.log('您按下了e键')
+		  	   	  }
+		  	   }
+		  }) 
+		   new Vue({
+		  	   el:'#text4',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console4:function(){
+		  	   	  	 console.log('您按下了r键')
+		  	   	  }
+		  	   }
+		  })
+		   new Vue({
+		  	   el:'#text5',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console5:function(){
+		  	   	  	 console.log('您按下了t键')
+		  	   	  }
+		  	   }
+		  })
+		
+		 
+
+
+	</script>
+</html>

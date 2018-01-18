@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	<style type="text/css">
+		#dv1{
+			width: 200px;
+			height: 200px;
+			background-color: deepskyblue;
+		}
+		
+	</style>
+	<body>
+		<div id="dv1" @contextmenu.prevent="dv3">    <!--contextmenu指的是点击鼠标右键的时候触发的事件-->
+			  
+			  <!--在vue中使用.prevent来组织默认行为，在点击右键的时候浏览器自带的菜单没有出现，说明默认行为被阻止-->
+		
+		</div>
+	</body>
+	<script>
+		  var vm=new Vue({
+		  	   el:'#dv1',
+		  	   data:{
+		  	   	msg:'aaaaa'
+		  	   },
+		  	   methods:{
+		  	   	 
+		  	   	  dv3:function(){
+		  	   	  	 console.log(111)
+		  	   	  }
+		  	   }
+		  })
+		
+
+
+	</script>
+</html>

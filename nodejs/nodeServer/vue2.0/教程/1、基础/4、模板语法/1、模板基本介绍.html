@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			{{msg}}
+		</div>
+		
+		 <!--vue模板使用方式是在html元素中使用{{}}符号编写，里面填写data中设置的数据的key值-->
+	</body>
+	<script>
+		   new Vue({
+		   	  el:"#dv",
+		   	  data:{
+		   	  	msg:'aaaa'
+		   	  }
+		   })
+		   
+	</script>
+</html>

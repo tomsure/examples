@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		
+		<div id="dv" :style="c" >  
+			 
+		        你好 vue   
+		</div> 
+		 
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 			el:'#dv',
+		   	 			data:{
+		   	 				c:{color:'red'}
+		   	 			}
+                     })
+ 
+//            当只需设置一个style样式属性的时候,可以在:class=后面设置一个任意字符串值,这个是是data中对应的json的key的值,data中这个key对应的value是一个json数据,里面就是具体的样式
+	</script>
+</html>

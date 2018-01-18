@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			羽绒服价格价:{{price}},含税原价价格：{{hanshui}}，含税折后价{{zhehou}}<br/>
+			<button @click='changePrice(400)'>点击更新价格</button>
+		</div>
+		
+	</body>
+	<script>
+		  var vm=new Vue({
+		  	 el:'#dv',
+		  	 data:{
+		  	 	price:0,
+		  	 	hanshui:0,
+		  	    zhehou:0
+		  	 },
+		  	 watch:{
+		  	 	price:function(newP,oldPrice){  //此时这个price与data中的price绑定
+		  	 		console.log('新价格:'+ newP  + '原价格：'+ oldPrice)
+		  	 		this.hanshui=this.price + this.price*0.05,
+		  	 		this.zhehou=(this.price + this.price*0.05) - 80
+		  	 	}
+		  	 },
+		  	  
+//		  	    watch中设置的选项函数的第一个参数是methods中设置的函数计算后返回的结果
+		  	 methods:{
+		  	 	changePrice:function(newPrice){
+		  	 	   this.price =newPrice + 50
+		  	 	}
+		  	 }
+		  })
+		   vm.price=500
+	</script>
+	    <!--1、watch与computed类似，用于观察数据的变化，然后进行相应的处理
+	   2、watch中设置的选项函数的第一个参数是methods中设置的函数计算后返回的结果，第二个参数是data中设置选项的原来的值
+	   3、 watch中设置的选项函数内如果进行和data内的选项名称相关运算，都会以新的值进行运算;
+	    4、常用技巧：在使用的时候可以使初始值都为0，由于watch是在检测data内选项属性值变化的时候更新数据，所以可以在实例外手动修改数据，这样和他绑定的其他数据也会相应改变-->
+	    
+	 
+	     <!--实例解析：
+	      1、关键字：data中的数据price、watch中的选项key值price,watch中选项price后面的函数中的参数newP,oldPrice,methods选项中函数的参数newPrice,
+	      2,解析：当methods中的方法changePrice执行后，方法中的参数newPrice就是就是执行传的实参400，在里面将price的值设置为这个参数或进行其他计算后，data中的price就会更新；
+	         这里的this.price就等于450
+	      3、此时watch中的函数的第一个参数就是methods中设置的方法的参数，第二个参数就是data数据中price原来的值
+	               newP:450, oldPrice:500
+	      4、在watch中设置的选项函数内使用price时候，取的值就是metchods内方法执行时候传递的参数在函数内计算后的值：
+	            newP就是450-->
+</html

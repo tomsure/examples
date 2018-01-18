@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		.boxWidth{
+			width: 100px;
+			
+		}
+		.boxHeight{
+			height: 100px;
+		}
+		.bgcolor{
+			background-color: red;
+		}
+	</style>
+	<body>
+		
+		<div id="dv" :class="[w,h,bg]" >  
+		        你好 vue   
+		</div> 
+		
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 el:'#dv',
+		   	 data:{
+		   	 	h:'boxHeight',   
+		   	 	w:'boxWidth',
+		   	 	bg:'bgcolor'
+		   	 }
+		   	
+		   })
+ 
+ 
+//       当需要给元素设置多个class的时候,操作如下:
+//         1,在data中设置多个键值对数据,
+//         2,在元素标签中使用:class或者v-bind:class不变,他们的值就写为一个数组,每个元素就是data中设置的键值对的key的名称
+
+	</script>
+</html>

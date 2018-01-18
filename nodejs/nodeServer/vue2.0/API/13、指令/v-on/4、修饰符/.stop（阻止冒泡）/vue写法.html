@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	<style type="text/css">
+		#dv1{
+			width: 200px;
+			height: 200px;
+			background-color: deepskyblue;
+		}
+		#dv2{
+			width: 150px;height: 150px;
+			background-color: firebrick;
+			
+		}
+		#dv3{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+		
+	</style>
+	<body>
+		<div id="dv1" @click="dv3">
+			<div id="dv2" @click.stop="dv2">
+				         <!--在html元素里绑定事件的时候，在事件名称后面使用.stop来阻止冒泡-->
+				<div id="dv3" @click="dv1">{{msg}}</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		  var vm=new Vue({
+		  	   el:'#dv1',
+		  	   data:{
+		  	   	msg:'aaaaa'
+		  	   },
+		  	   methods:{
+		  	   	  dv1:function(){
+		  	   	  	alert(1)   //会弹出
+		  	   	  },
+		  	   	  dv2:function(){
+		  	   	  	 alert(2)   //会弹出
+		  	   	  	
+		  	   	  },
+		  	   	  dv3:function(){
+		  	   	  	alert(3)   //不会弹出，已经阻止冒泡
+		  	   	  }
+		  	   }
+		  })
+		
+
+//       vue中使用.stop的方式阻止冒泡,比较简单方便,用法就是在html中绑定事件的时候将.stop加在事件的后面
+	</script>
+</html>

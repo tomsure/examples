@@ -6,37 +6,34 @@
 		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
 	</head>
 	<style type="text/css">
-		#dv{
+		#dv1{
 			width: 200px;
 			height: 200px;
 			background-color: deepskyblue;
 		}
-		#dv1{
-			width: 150px;height: 150px;
-			background-color: firebrick;
-			
-		}
-		#dv2{
-			width: 100px;
-			height: 100px;
-			background-color: green;
-		}
 		
 	</style>
 	<body>
-		<div id="dv" @click.stop="console.log(1)">
-			<div id="dv1">
-				<div id="dv2">{{msg}}</div>
-			</div>
+		<div id="dv1" @contextmenu="dv3">   
+		
 		</div>
 	</body>
 	<script>
 		  var vm=new Vue({
-		  	   el:'#dv',
+		  	   el:'#dv1',
 		  	   data:{
 		  	   	msg:'aaaaa'
+		  	   },
+		  	   methods:{
+		  	   	 
+		  	   	  dv3:function(ev){
+		  	   	  	 console.log(111)
+		  	   	  	 ev.preventDefault()   //原生js阻止默认行为使用事件对象的preventDefault方法实现
+		  	   	  }
 		  	   }
 		  })
 		
+
+
 	</script>
 </html>

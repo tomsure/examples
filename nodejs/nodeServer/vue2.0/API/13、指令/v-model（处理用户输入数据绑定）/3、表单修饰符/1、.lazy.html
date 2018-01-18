@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			  <input type="text" v-model.lazy="userName" />
+			   用户名：{{userName}}
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#dv',
+			data:{
+				userName:''
+				
+			}
+		})
+    
+//       .lazy修饰符用法是在v-model后面跟一个.lazy,使用后的效果是,在用户输入内容的时候,绑定的数据不会立刻刷新,只有输入元素触发onchange(例如敲回车或者鼠标光标离开输入的元素或失去焦点等)的时候才会刷新,他的好处是用于提高页面性能
+   
+	</script>
+	
+</html>

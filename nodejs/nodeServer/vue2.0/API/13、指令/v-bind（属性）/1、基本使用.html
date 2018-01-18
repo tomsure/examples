@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<body>
+		
+		<div id="dv" v-bind:class="classValue" >  
+		     
+		</div>
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 el:'#dv',
+		   	 data:{
+		   	 	classValue:'box',   //动态设置class
+		   	 	
+		   	 }
+		   	
+		   })
+ 
+//       v-bind用于设置元素的属性值,写法是v-bind:属性名="data中设置的属性的key名"
+//      例如这里需要给元素设置class名称,则使用 v-bind:class='';这时候class的值从实例化vue的时候在data中设置的属性数据中取,这里取了data中的classValue,所以最后元素的class的值就是box
+        
+		   
+		         
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			  <input type="text" v-model="msg" />
+			   {{msg}}
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#dv',
+			data:{
+				msg:'123'
+				
+			}
+		})
+    
+
+	</script>
+	<!--v-model用于数据双向绑定，当用户在输入元素中输入了内容后，页面的模板数据中的数据会随之改变；
+	原理是当用户输入变量后，会自动的将输入的内容作为值保存到data数据中设置的数据的值，例如这里，会自动的将input 输入的内容柏村为msg的值-->
+</html>

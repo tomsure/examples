@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<body>
+		
+		<div id="dv" :class="classValue" >  
+		           <!--当只需要给元素设置一个class的时候，就使用:class或者v-bind:class，值写data中设置的相应的数据的key名称，例如这里设置class为box，则在div标签中设置：class='classValue' ,这里的classValue就是data中设置的classValue,此时div实际的class值就是data中classValue的value，也就是box-->
+		</div>
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 el:'#dv',
+		   	 data:{
+		   	 	classValue:'box'   //动态设置class
+		   	 }
+		   	
+		   })
+ 
+
+
+	</script>
+</html>

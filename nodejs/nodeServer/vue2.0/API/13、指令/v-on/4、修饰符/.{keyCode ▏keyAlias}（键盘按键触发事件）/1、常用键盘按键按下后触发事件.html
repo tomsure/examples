@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	<style type="text/css">
+		#dv1{
+			width: 200px;
+			height: 200px;
+			background-color: deepskyblue;
+		}
+		
+	</style>
+	<body>
+		<input id="text3" type="text" @keydown.13="consl" />  
+		 <!--按下键盘码为13的时候触发-->
+	</body>
+	<script>
+		  var vm=new Vue({
+		  	   el:'#text3',
+		  	   data:{
+		  	   	msg:'aaaaa'
+		  	   },
+		  	   methods:{
+		  	   	 
+		  	   	  consl:function(){
+		  	   	  	 console.log('您按下了回车键')
+		  	   	  }
+		  	   }
+		  })
+		
+//           vue可以通过键盘事件检测按下的键盘码触发自定义的事件函数,用法是直接在绑定@keydown或者@keyup等事件后写.+键盘码
+
+	</script>
+</html>

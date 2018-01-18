@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		.w{
+			width: 100px;
+			
+		}
+		.h{
+			height: 100px;
+		}
+		.bg{
+			background-color: red;
+		}
+	</style>
+	<body>
+		
+		<div id="dv" :class="{w:true,h:true,bg:true}" >   <!--这里的w,h,bg值的就是生成的class名称-->
+		        你好 vue   
+		</div> 
+		 <!--另一种用法就是使用json格式，具体用法是:ckass=或者v-bind=后面写一个json格式的数据，json里面每个数据的key值就是最终生成的class名，value是true或者false，只有是false的时候，这个class才会生效，如果是false则不生效，这样的话，就可以通过动态操作的方式设置元素的class-->
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 			el:'#dv'
+                     })
+ 
+ 
+
+
+	</script>
+</html>

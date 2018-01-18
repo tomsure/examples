@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	
+	<body>
+		<input id="text1" type="text" @keydown.enter="console1" />  
+		<input id="text2" type="text" @keydown.tab="console2" />
+		<input id="text3" type="text" @keydown.delete="console3" />
+		<input id="text4" type="text" @keydown.esc="console4" />
+		<input id="text5" type="text" @keydown.space="console5" />
+		<input id="text6" type="text" @keydown.up="console6" />
+		<input id="text7" type="text" @keydown.down="console7" />
+		<input id="text8" type="text" @keydown.left="console8" />
+		<input id="text9" type="text" @keydown.right="console9" />
+		
+	</body>
+	<script>
+		  new Vue({
+		  	   el:'#text1',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console1:function(){
+		  	   	  	 console.log('您按下了回车键')
+		  	   	  }
+		  	   }
+		  }) 
+		   new Vue({
+		  	   el:'#text2',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console2:function(){
+		  	   	  	 console.log('您按下了tab键')
+		  	   	  }
+		  	   }
+		  })
+		
+		 new Vue({
+		  	   el:'#text3',
+		  	   
+		  	   methods:{
+		  	   	 
+		  	   	  console3:function(){
+		  	   	  	 console.log('您按下了delete键')
+		  	   	  }
+		  	   }
+		  })
+//		    删除和退格键键都会触发
+		
+		 new Vue({
+		  	   el:'#text4',
+		  	   
+		  	   methods:{
+		  	   	 
+		  	   	  console4:function(){
+		  	   	  	 console.log('您按下了esc键')
+		  	   	  }
+		  	   }
+		  })
+		
+		 
+		
+		 new Vue({
+		  	   el:'#text5',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console5:function(){
+		  	   	  	 console.log('您按下了空格键')
+		  	   	  }
+		  	   }
+		  })
+		
+		 new Vue({
+		  	   el:'#text6',
+		  	   
+		  	   methods:{
+		  	   	 
+		  	   	  console6:function(){
+		  	   	  	 console.log('您按下了up键')
+		  	   	  }
+		  	   }
+		  })
+		
+		 new Vue({
+		  	   el:'#text7',
+		  	  
+		  	   methods:{
+		  	   	 
+		  	   	  console7:function(){
+		  	   	  	 console.log('您按下了down键')
+		  	   	  }
+		  	   }
+		  })
+		
+		 new Vue({
+		  	   el:'#text8',
+		  	   
+		  	   methods:{
+		  	   	 
+		  	   	  console8:function(){
+		  	   	  	 console.log('您按下了left键')
+		  	   	  }
+		  	   }
+		  })
+		   
+		   new Vue({
+		  	   el:'#text9',
+		  	   
+		  	   methods:{
+		  	   	 
+		  	   	  console9:function(){
+		  	   	  	 console.log('您按下了right')
+		  	   	  }
+		  	   }
+		  })
+		
+
+//          vue将常用按键进行了封装只需在绑定键盘事件但是事件函数后面使用.链接事件名和vue封装好的按键名就会触发相应德海事件函数
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			<ol>
+				<li v-for="(key,value) in person">
+					 {{key}}    :    {{value}}
+				</li>
+			</ol>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#dv',
+			data:{
+				person:{
+					name:'tangxu',
+					sex:'men',
+					age:'27',
+					job:'ITworker'
+				}
+			    }
+		})
+    
+
+	</script>
+	  <!--v-for还可以用于遍历对象，使用方法是，在绑定的html元素内的子元素中使用v-for指令，，值使用(xx,xx) in xxx  的方式进行遍历，其中（xxx,xxx）指的是data中设置的对象的属性和值，第一个是属性，第二个是值，in 后面的xxx指的是data中设置的对象，最后可以在{{}}模板中使用遍历出来的每个数据-->
+</html>

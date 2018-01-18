@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		  
+		  <div id="dv">
+		  	<input type="" v-model="msg" name="" id="" value="" />
+		  	<br />
+		  	  {{msg}}
+		  	<br />
+		  	   
+		  </div>
+		   
+		    <!--数据双向绑定的基本用法是使用v-modal指令，设置在元素中，当input元素的value值改变后，页面其他绑定相同模板的数据会同时改变-->
+	</body>
+	<script>
+		   new Vue({
+		   	  el:"#dv",
+		   	  data:{
+		   	  	msg:'aaaa'
+		   	  }
+		   })
+		   
+	</script>
+</html>

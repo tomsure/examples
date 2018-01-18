@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		
+		<div id="dv"  v-on:click="change">  <!--绑定事件-->
+			{{msg}}
+		</div>
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 el:'#dv',
+		   	 data:{
+		   	 	msg:'123'
+		   	 },
+		   	 methods:{
+		   	 	change:function(){    //作为时间回调函数
+		   	 		  this.msg="456" 
+                       
+		   	 	}
+		   	 }
+		   })
+//		     v-on用于绑定事件,具体格式是v-on: 后面写具体的时间类型名称,再在事件类型名称后写回调函数名称,回调函数是在vue实例化函数中设置的methods中的函数
+		   
+		         
+	</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		
+		<div id="dv" :style="[c,b]" >  
+			 
+		        你好 vue   
+		</div> 
+		 
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 			el:'#dv',
+		   	 			data:{
+		   	 				c:{color:'red'},
+		   	 				b:{backgroundColor:'blue'}
+		   	 			}
+                     })
+ 
+           
+//当有多个style的时候,可以在设置:style的时候,把值设置为一个数组,里面试多个数据,对应data中的每组数据，每组数据的key就是元素中的数组元素的值，value是json格式数据，里面的数据就是css样式，注意，复合属性必须使用js的驼峰命名法，例如background-color需写成backgroundColor
+  
+	</script>
+</html>

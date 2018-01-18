@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv" >
+			不去空格：<textarea v-model="msg" name="" rows="10" cols="30"></textarea>
+			
+			
+			<p style="border: 1px solid red;height: 40px;"> {{msg}}</p> <br /><br />
+		
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#dv',
+			data:{
+//				
+                msg:''
+				
+			}
+		})
+    
+        
+          
+     
+	</script>
+	   
+	   
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../../../../dist/vue/dist/vue.min.js"> </script>
+	</head>
+	<style type="text/css">
+		#dv1{
+			width: 200px;
+			height: 200px;
+			background-color: deepskyblue;
+		}
+		#dv2{
+			width: 150px;height: 150px;
+			background-color: firebrick;
+			
+		}
+		#dv3{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+		
+	</style>
+	<body>
+		<div id="dv1" @click="dv3">
+			<div id="dv2" @click="dv2">
+				<div id="dv3" @click="dv1">{{msg}}</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		  var vm=new Vue({
+		  	   el:'#dv1',
+		  	   data:{
+		  	   	msg:'aaaaa'
+		  	   },
+		  	   methods:{
+		  	   	  dv1:function(){
+		  	   	  	alert(1)
+		  	   	  },
+		  	   	  dv2:function(ev){
+		  	   	  	 alert(2)
+		  	   	  	 ev.cancelBubble=true  //ie浏览器阻止冒泡写法
+		  	   	  	 ev.stopPropagation()  //阻止冒泡，在这里弹出后后面不再弹出
+		  	   	  },
+		  	   	  dv3:function(){
+		  	   	  	alert(3)
+		  	   	  }
+		  	   }
+		  })
+		
+//		    原生js中阻止冒泡就是使用ev.cancelBubble=true 或者ev.stopPropagation()来设置组织冒泡
+	</script>
+</html>

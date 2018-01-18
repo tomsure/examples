@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.min.js"></script>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		
+		<div id="dv" :style="style1" >  
+			 
+		        你好 vue   
+		</div> 
+		 
+	</body>
+	<script>
+		   var vm=new Vue({
+		   	 			el:'#dv',
+		   	 			data:{
+		   	 				style1:{
+		   	 					color:'red',
+		   	 					backgroundColor:'green'
+		   	 					
+		   	 				}
+		   	 			}
+                     })
+ 
+//           这种形式就是只在元素属性中设置一个字符串,在data中设置一个json数据,json的key值是html元素中的设置的字符串,value是一组json数据,也是具体的样式属性
+
+  
+	</script>
+</html>

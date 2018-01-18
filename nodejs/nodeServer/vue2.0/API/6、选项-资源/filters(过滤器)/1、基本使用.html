@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			{{msg | toupper}} <br/>  <!--转换为大写-->
+			{{num | topercentage }}  <!--转换为百分比-->
+			
+		</div>
+	</body>
+	<script>
+		  new Vue({
+		  	 el:'#dv',
+		  	 data:{
+//		  	 	msg:'aaa',
+		  	    num:0.3
+		  	 },
+		  	 filters:{
+		  	 	toupper:function(value){
+		  	 		return value.toUpperCase()
+		  	 	},
+		  	 	topercentage:function(value){
+		  	 		return value*100 + '%'
+		  	 	}
+		  	 	
+		  	 }
+		  })
+	</script>
+	<!--过滤器filters用于将输出的内容进行格式化转换，例如日期，字母大小写，数字再计算等-->
+	<!--使用方法：
+	 1、设置filters选项，里面可以设置多个函数选项，选项的key值就是过滤器名称，vaue是函数，这个函数需要一个参数，这个参数就是data中设置的数据；
+	 2、在函数内部使用return 关键字返回计算过程，参数value就是dada中的数据，可以根据数据类型使用js中的各种数据类型转换方式进行计算转换，；
+	 3、在页面模板中使用管道符号“ |” 引入过滤器，方式是在{{}}中前面写data数据，使用|  隔开，后面写过滤器名称。-->
+</html>
