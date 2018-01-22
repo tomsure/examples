@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+		  <h1>身世之谜</h1>
+		  <show-member-info name='tangxu' :age='25' :detial='{address:"earth",language:"世界语"}'></show-member-info>
+		</div>
+	</body>
+	<script>
+        		
+        		Vue.component('show-member-info',{
+        			props:{
+        				name:{   
+        					type:String,  //必须是字符串
+        					required:true    //必填
+        				},
+        				age:{
+        					type:Number,    //必须是Number
+        					validator:function(value){
+        						return value>=0 &&  value<=130;   //必须大于0 小于130
+        					}
+        				},
+        				detail:{
+        					type:Object,   //必须是对象
+        					default:function(){  //默认，如果不设置的时候会显示这里的内容
+        						return { 
+        							address:'US',    
+        							language:'English'
+        						}
+        					}
+        				}
+        			},
+        			template:'<div>姓名：{{this.name}}  <br/>'+
+        			  '年龄：{{this.age}}岁<br/>'+
+        			  '地址：{{this.detail.address}}<br/>'+
+        			  '语言：{{this.detail.language}} </div>'
+        		})
+        			
+        		new Vue({
+        			el:'#dv'
+        		})
+        		
+	</script>
+	 
+	      <!--组件的验证，是对在使用组件的时候（在html中写js编写好的组件名称）设置属性值的时候对属性值的验证-->
+	      
+	      <!--组件验证：
+	          注册全局组件的时候，会对传递到组件中的数据进行验证，这里的验证不是给用户看的，而是给开发者看的
+	     props选项专门用于传递数据，它可以传递多种数据类型，包括 string、number,object等，
+	        在传递多个数据的时候,需要使用json的格式（在前面只传递一个字符串的时候，使用的是数组格式）,里面的内一个数据是一个json格式编写的对象，例如：上面的age,name等-->
+	     
+	     特殊属性：name：
+	     
+	        
+	      <!--暂时为学完-->   
+	     
+	       
+	  
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+			<input type="text" v-model="myName" />
+			<say-hello :pname='myName'></say-hello>
+		</div>
+	</body>
+	<script>
+        		
+        		Vue.component('say-hello',{
+        			props:['pname'],
+        			template:'<div>您好！{{pname}}</div>',
+        		
+        		})
+        		new Vue({
+        			el:'#dv',
+        			data:{
+        				myName:'tangxu'
+        			}
+        		})
+	</script>
+	     <!--组件传递变量的意思是，组件的属性值可以使用实例化中设置的data数据来赋值，例如上面的例子中,new Vue()中的data设置的myName就是属性值，注册后的组件在页面使用的时候（就是在页面填写say-hello这样的标签）可以使用new Vue()中data中设置的属性值，作为变量传给props设置的数据属性值使用，例如这里：
+	      props的值是pname；
+	          所以在html中say-hello就设置了 属性 pname；
+	          把say-hello中pname的属性值设为myName
+	       这样就相当于是把一个变量myName传递给了pname，这样可以通过动态修改myName的值从而达到修改pname的值的作用-->
+	      
+	      
+	  
+</html>

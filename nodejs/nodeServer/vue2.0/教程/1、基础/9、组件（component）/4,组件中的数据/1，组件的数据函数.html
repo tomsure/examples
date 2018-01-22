@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+			<div>
+				今天的天气是 <weather></weather>
+			</div>
+		</div>
+	</body>
+	<script>
+        		
+        		Vue.component('weather',{
+        			template:'<span style="color:red;"> {{tianqi}}</span>',
+        			data:function(){
+        				return {
+        					tianqi:'下雨'
+        				}
+        			}
+        		})
+        		new Vue({
+        			el:'#dv'
+        		}) 
+        		 Vue.tianqi='111'
+	</script>
+	    <!--组件中的内容可以通过动态数据的方式添加，具体步骤如下：
+	       1、在js中使用Vue.component()方法注册组件时候，template模板选项中元素的内容使用{{}}格式编写；
+	       2、在Vue.component()方法第二个参数template选项后面设置data选项，值是一个function(){}函数，里面使用return 关键字返回一个json格式的对象，这个json中的键值对的key值就写在template模板中的{{}}中-->
+</html>

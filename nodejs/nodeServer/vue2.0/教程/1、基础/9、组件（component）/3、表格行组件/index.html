@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="myApp">
+			<table border="1" >
+				<tr>
+					<td>编号</td>
+				    <td>游戏名称</td>
+				</tr>
+				<!--<my-row1></my-row1>
+				<my-row2></my-row2>
+				<my-row3></my-row3>
+				 这样使用是错误的
+				-->
+				 <tr is="my-row1"></tr>
+				 <tr is='my-row2'></tr>
+				 <tr is='my-row3'></tr>
+			</table>
+		</div>
+	</body>
+	<script>
+		Vue.component('my-row1',{
+			template:'<tr><td>01</td><td>超级马里奥</td></tr>'
+		})
+		Vue.component('my-row2',{
+			template:'<tr><td>02</td><td>奥特曼</td></tr>'
+		})
+		Vue.component('my-row3',{
+			template:'<tr><td>02</td><td>魔兽世界</td></tr>'
+		})
+		 new Vue({
+		 	 el:'#myApp'
+		 })
+	</script>
+	  <!--vue表行组件指的是使用vue编写组件实现table中的tr行-->
+	    <!--vue表行组建实现步骤如下：
+	     1、使用Vue.component()方法注册组卷，注册一次表示一个内容的行；多行不同内容则注册多次；
+	     2、实例化vue；
+	     3、在页面中编写多个tr元素，每个tr元素设置一个is属性，属性值是js中注册的对应的组件名。-->
+</html>

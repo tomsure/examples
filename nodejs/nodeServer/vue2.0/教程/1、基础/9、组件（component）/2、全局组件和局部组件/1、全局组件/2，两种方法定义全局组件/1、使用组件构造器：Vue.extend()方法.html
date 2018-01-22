@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+			 <aaa></aaa>
+		</div>
+		
+	</body>
+	<script>
+		  var Aaa=Vue.extend({
+		  	template:'<h3>1111111111111111</h3>'
+		  })
+		     Vue.component('aaa',Aaa)
+		  
+		   
+		   new Vue({
+		   	el:'#dv'
+		   })
+		   
+//		     使用exten()方法注册组件步骤:
+//		     
+//		        1,使用new Vue()方法实例化,在选项中设置el绑定根组件元素;
+//		        2,在new Vue()前面使用 Vue.extend()定义组件,参数是一个json数据,设置组件模板template;
+//		        3,使用Vue.component()方法注册组件,两个参数,第一个是组件名称,第二个参数写上一步执行的Vue.extend()方法执行的步骤,可以使用变量代理,例如上面的例子;
+//		        4,在页面中使用的时候就可以用Vue.component()的第一个参数名来写一个html标签进行使用
+	</script>
+</html>

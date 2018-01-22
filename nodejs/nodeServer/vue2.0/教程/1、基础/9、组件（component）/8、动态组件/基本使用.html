@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+		     <component :is='a'></component>
+		</div>
+	</body>
+	<script>
+        		new Vue({
+        			el:'#dv',
+        			data:{
+        				a:'BB'  //a的值设置为AA或者BB则，页面显示的时候，就调用AA组件或者BB组件
+        			},
+        			components:{
+        				'AA':{
+        					template:'<div>我是组件A</div>',
+        					
+        				},
+        				'BB':{
+        					template:'<div>我是组件B</div>'
+        				}
+        			}
+        		})
+        		
+	</script>
+	 
+	      <!--动态组件：
+	        指的是组件不是固定的而是动态的，具体是哪个组件由 is属性决定，基本原理如下：
+	          1、vue实例方法中的data中的数据a是动态的，这个属性a的值components中的选项的key值绑定，绑定哪个key值，则页面就显示哪个内容，而这个key值就是组件的名称,所以页面显示的就是那个组件的内容。
+	          2、在页面上使用component标签 并设置is属性为vue实例中的data选项的数据key值，例如这里的a-->
+	       
+	  
+</html>

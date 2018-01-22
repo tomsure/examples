@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+			<h4>您的成绩是：</h4>
+			<chengji :score='50'></chengji>
+			<chengji :score='80'></chengji>
+			<chengji :score='100'></chengji>
+		</div>
+	</body>
+	<script>
+		 Vue.component('chengji',{
+		 	 props:['score'],
+		 	 template:'<div><span>{{score}}分，{{result}}</span></div>',
+		 	 
+		 	 computed:{
+		 	 		result:function(){
+		 	 			var testResult=''
+		 	 			if(this.score<60){
+		 	 				testResult='不及格'
+		 	 			}else if(this.score<90){
+		 	 				testResult='中等'
+		 	 			}else if(this.score>90){
+		 	 				testResult='优秀生'
+		 	 			}
+		 	 			return testResult
+		 	 		}
+		 	 	
+		 	 }
+		 	
+		 })
+		    new Vue({
+		    	el:'#dv'
+		    })
+	</script>
+</html>

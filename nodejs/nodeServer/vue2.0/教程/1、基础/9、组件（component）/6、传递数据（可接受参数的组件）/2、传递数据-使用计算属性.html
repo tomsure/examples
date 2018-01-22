@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+			<h3>您的成绩是：</h3>
+			<test-result :score='50'></test-result>
+			<test-result :score='70'></test-result>
+			<test-result :score='100'></test-result>
+		</div>
+	</body>
+	<script>
+        		
+        		Vue.component('test-result',{
+        			props:['score'],
+        			template:'<div><span>{{score}} 分:&nbsp&nbsp<span>{{result}}</span></div>',
+        			computed:{
+        				result:function(){  //这里的result写在模板的{{}}中
+        				 var testResult='';
+        				 if(this.score<60){
+        				 	testResult='不及格'
+        				 }else if(this.score<90){
+        				 	testResult='中等生'
+        				 }else if(this.score<=100){
+        				 	testResult='优等生'
+        				 	 
+        				 }
+        				 return testResult
+        			
+        			  }
+        			}
+        		})
+        		new Vue({
+        			el:'#dv'
+        		})
+	</script>
+	  <!--vue组件可以动态传递数据来实现，实现步骤如下：
+	   1、 使用Vue.component()方法注册组件，第二个参数中设置多个选项：
+	      1、props：这个选项设置的数组元素字符串名称就是传递的数据名称，这里设置的数据可以在页面组件中作为条件设置，设置这个选项的时候，他的值是一个数组，内部元素是一个字符串；
+	      2、在template中，使用{{}}来调用设置的props的值，
+	      3、设置computed选项使用计算属性来计算和props选项数据相关的数据；
+	      4、在html页面元素中，使用Vue.component()的第一个参数作为组件名称编写html格式的标签；并设置一个属性，属性名称就是注册组件时候设置的props中的数组元素，值就是需要动态传递的数据-->
+	      
+	  
+</html>

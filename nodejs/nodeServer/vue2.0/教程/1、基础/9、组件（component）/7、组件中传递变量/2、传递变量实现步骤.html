@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<body>
+		<div id="dv">
+			<input type="text" v-model="myName" />
+			<say-hello :pname='myName'></say-hello>
+		</div>
+	</body>
+	<script>
+        		
+        		Vue.component('say-hello',{
+        			props:['pname'],
+        			template:'<div>您好！{{pname}}</div>',
+        		
+        		})
+        		new Vue({
+        			el:'#dv',
+        			data:{
+        				myName:'tangxu'
+        			}
+        		})
+	</script>
+	     <!--1、组件注册后，在new Vue()实例化方法中设置data选项，并设置json数据；、
+	      data:{
+        		 myName:'tangxu'
+        		}
+	         
+	     2、在使用组件的时候，把props设置的数组元素设置为组件的属性名；
+	      props:['pname']
+	      
+	     3、把data中设置的json数据的key值设置为上一步设置的属性的value值
+	      <say-hello :pname='myName'></say-hello>-->
+	      
+	  
+</html>

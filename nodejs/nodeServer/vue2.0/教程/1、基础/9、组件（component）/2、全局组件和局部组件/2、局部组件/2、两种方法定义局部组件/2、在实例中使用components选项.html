@@ -4,15 +4,13 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
-	<script src="../../../../../dist/vue/dist/vue.js"></script>
+	<script src="../../../../../../dist/vue/dist/vue.js"></script>
 	<body>
 		<div id="dv">
 			<my-weather></my-weather>
 		</div>
 		<div>
-			
-			  	<my-weather></my-weather>
-			
+			<my-weather></my-weather>
 			<!--这里就不会生效，因为my-weather是局部组件-->
 		</div>
 	</body>
@@ -31,7 +29,6 @@
 		  	 	'my-weather':myComponent
 		  	 }
 		  })
-		  
 	</script>
 	   <!--  局部组件就是只能在绑定当前html元素的vue实例中使用，自定义的html标签只能在vue实例化过程中当前匹配的el选项绑定放入元素中使用才有效 -->
 <!--	   

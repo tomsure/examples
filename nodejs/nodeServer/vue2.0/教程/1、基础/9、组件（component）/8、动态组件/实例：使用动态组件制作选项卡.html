@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<input type="button" @click="a='AA'"  value="我是A组件"/>
+			<input type="button" @click='a="BB"' value="我是B组件"/>
+		     <component :is='a'></component>
+		</div>
+	</body>
+	<script>
+        		new Vue({
+        			el:'#dv',
+        			data:{
+        				a:'BB'  //a的值设置为AA或者BB则，页面显示的时候，就调用AA组件或者BB组件
+        			},
+        			components:{
+        				'AA':{
+        					template:'<div>我是组件A</div>',
+        					
+        				},
+        				'BB':{
+        					template:'<div>我是组件B</div>'
+        				}
+        			}
+        		})
+        		
+	</script>
+	    <!--通过click事件来动态改变is的值从而改变data中数据的值，达到改变使用那个组件的目的-->
+	     
+	       
+	  
+</html>
