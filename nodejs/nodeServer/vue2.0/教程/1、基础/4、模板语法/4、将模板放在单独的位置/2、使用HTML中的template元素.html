@@ -4,6 +4,63 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
+	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<script type="xt"></script>
+	<style type="text/css">
+		.dv1,.dv2{
+			 height: 100px;
+			 height: 100px;
+			 
+		}
+		.dv1{
+			background-color: red;
+			margin: 1rem;
+		}
+		.dv2{
+			background: green;
+		}
+	</style>
 	<body>
+		<div id="box">
+			<zujian></zujian>
+		</div>
+		
+		 <div id="box1" >
+		 	
+		 	 <zujian1></zujian1>
+		 </div>
 	</body>
+	
+	
+	   <template id="aaa">
+	   	   <div class="dv1" >123</div>
+	   </template>
+	<script>
+		
+		new Vue({     //局部组件
+			 el:'#box',
+			
+			 components:{
+               'zujian':{
+                    template:'#aaa'     	
+                    }
+            			 }
+			 
+		})
+		
+
+
+
+//      上面的例子是局部组件,如果是全局组件也一样(这里公用一套模板):
+            Vue.component('zujian1',{    //全局组件
+             	 template:'#aaa'
+            })
+            new Vue({
+            	el:'#box1',
+            	
+            	
+            })
+	</script>
+	
+	     <!--还可以使用模template标签来写模板，用法和script标签相同，绑定id号即可-->
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue/dist/vue.min.js"></script>
+	<script type="xt"></script>
+	<style type="text/css">
+		.dv1,.dv2{
+			 height: 100px;
+			 height: 100px;
+			 
+		}
+		.dv1{
+			background-color: red;
+			margin: 1rem;
+		}
+		.dv2{
+			background: green;
+		}
+	</style>
+	<body>
+		<div id="box">
+			<zujian></zujian>
+		</div>
+	</body>
+	
+	<script>
+		
+		new Vue({
+			 el:'#box',
+			 components:{
+               'zujian':{
+                    template:'<div class="dv1">dv1</div><div class="dv2">dv2</div>'     	                       //dv2不显示
+                    }
+            			 }
+		})
+		
+//		 在使用模板的时候,不管模板写在哪里,模板最外层都只能放一个html元素,例如上面的例子中,.dv2是不显示的
+	</script>
+</html>

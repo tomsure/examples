@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+	<script src="../../../../../../dist/vue/dist/vue.js"></script>
+	<template id="parent">
+		<div class="box" >
+			 <!--{{msg}}-->   <!--父组件自己的数据，显示正常-->
+			<bbb :d='msg'></bbb>
+		</div>
+	</template>
+	<template id="child">
+		<div class="box1" >
+			{{d}}
+		</div>
+	</template>
+	<body>
+	</body>
+	   <div id="dv">
+	   	   <aaa></aaa>
+	   </div>
+	<script>
+		 
+		
+		 new Vue({
+		 	el:'#dv',
+		 	components:{
+		 		'aaa':{
+		 			data:function(){
+		 				return {
+		 					msg:'我是父组件数组'
+		 				}
+		 			},
+		 	template:'#parent',
+		 	    components:{
+		 	    	'bbb':{
+		 	    		props:['d'],
+		 	    		template:'#child'
+		 	    	}
+		 	    }
+		 	         }
+		 }
+		 })
+	</script>
+	     <!--子组件访问父组件数据(或者父组件向子组件传递数据)的操作步骤如下：
+	       1、在子组件中设置props选项，里面设置一个任意字符串；
+	       2、将上一步设置的props中的字符串使用{{}}设置在子组件的模板中（28行）
+	       3、在子组件标签里面使用v-bind或者：方式简写一个属性，属性名就是第二步设置的props中的字符串，属性值就是父组件中data中的数据；
+	-->
+	    
+</html>

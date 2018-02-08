@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.js"></script>
+	<template id="parent">  <!--父组件模板-->
+      <div style="width: 100px;height: 100px; background: green;">
+      	 
+      	  <bbb></bbb>
+      	
+	  </div>
+	</template>
+	<template id="child">   <!--自组件模板-->
+		<h2>子组件</h2>
+	</template>
+	<body>
+		<div id="dv">
+	   	   <aaa>
+	   	   	  
+	   	   </aaa>
+	   </div>
+	</body>
+	   
+	<script>
+		 new Vue({
+		 	el:'#dv',
+		 	components:{
+		 		'aaa':{
+		 			template:'#parent',
+		 			components:{  //注册子组件
+		 			      'bbb':{
+		 			      	template:'#child'
+		 			      }
+		 			}
+		 		}
+		 	}
+		 })
+	</script>
+</html>

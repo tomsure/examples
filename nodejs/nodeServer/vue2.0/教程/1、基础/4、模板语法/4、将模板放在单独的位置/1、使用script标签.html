@@ -5,6 +5,63 @@
 		<title></title>
 	</head>
 	<script src="../../../../dist/vue/dist/vue.min.js"></script>
+	<script type="xt"></script>
+	<style type="text/css">
+		.dv1,.dv2{
+			 height: 100px;
+			 height: 100px;
+			 
+		}
+		.dv1{
+			background-color: red;
+			margin: 1rem;
+		}
+		.dv2{
+			background: green;
+		}
+	</style>
 	<body>
+		<div id="box">
+			<zujian></zujian>
+		</div>
+		
+		 <div id="box1" >
+		 	
+		 	 <zujian1></zujian1>
+		 </div>
 	</body>
+	
+	
+	<script type="x-template" id="aaa">
+		  <div class="dv1"></div>
+		  
+	</script>
+	<script>
+		
+		new Vue({     //局部组件
+			 el:'#box',
+			
+			 components:{
+               'zujian':{
+                    template:'#aaa'     	
+                    }
+            			 }
+			 
+		})
+		
+
+
+
+//      上面的例子是局部组件,如果是全局组件也一样(这里公用一套模板):
+            Vue.component('zujian1',{    //全局组件
+             	 template:'#aaa'
+            })
+            new Vue({
+            	el:'#box1',
+            	
+            	
+            })
+	</script>
+	
+	<!--//		这种方式是使用script标签,type自定义值,设置一个ID号,在使用注册组件的时候将template的值设置为那个script的id即可-->
 </html>

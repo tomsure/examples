@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.js"></script>
+	<template id="tem">
+		 <div style="width: 100px;height: 100px; background: green;">
+		 	<bbb>11</bbb>
+        </div>
+	</template>
+	<template id="childtep">
+		<h2>11</h2>
+	</template>
+	<body>
+		<div id="dv">
+	   	   <aaa>
+	   	   	  
+	   	   </aaa>
+	   </div>
+	</body>
+	   
+	<script>
+		 new Vue({
+		 	el:'#dv',
+		 	components:{
+		 		'aaa':{
+		 			template:'#tem',
+		 			components:{
+		 			      'bbb':{
+		 			      	template:'<h2>11</h2>'
+		 			      }
+		 			}
+		 		}
+		 	}
+		 })
+	</script>
+</html>

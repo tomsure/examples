@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+	<script src="../../../../../../../dist/vue/dist/vue.js"></script>
+	<template id="parent">
+		<div class="box" >
+			 <!--{{msg}}-->   <!--父组件自己的数据，显示正常-->
+			<bbb :d='msg' :f='msg1'></bbb>
+		</div>
+	</template>
+	<template id="child">
+		<div class="box1" >
+			{{d}}  <!--第二条数据-->
+			<br>  
+			{{f}}  <!--第二条数据-->
+		</div>
+	</template>
+	<body>
+	</body>
+	   <div id="dv">
+	   	   <aaa></aaa>
+	   </div>
+	<script>
+		 
+		
+		 new Vue({
+		 	el:'#dv',
+		 	components:{
+		 		'aaa':{
+		 			data:function(){
+		 				return {
+		 					
+		 					msg:'我是父组件数组',
+		 					msg1:'我也是父组件数据'
+		 				}
+		 			},
+		 	template:'#parent',
+		 	    components:{
+		 	    	'bbb':{
+		 	    		props:['d','f'],
+		 	    		template:'#child'
+		 	    	}
+		 	    }
+		 	         }
+		 }
+		 })
+	</script>
+	     
+	       
+	    
+</html>
