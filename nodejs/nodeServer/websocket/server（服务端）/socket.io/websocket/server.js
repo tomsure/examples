@@ -4,18 +4,18 @@ var serv = http.createServer(function(req, res) {
 	
 	console.log('有人进来了');
 	
-	res.writeHeader(200, {
+	/*res.writeHeader(200, {
 		'content-type' : 'text/html;charset="utf-8"'
-	});
+	});*/
 	
-	res.writeHeader(404, {
+	/*res.writeHeader(404, {
 		'content-type' : 'text/html;charset="utf-8"'
 	});
 	
 	res.write('你要访问的页面资源不存在！');
-	res.end();
+	res.end();*/
 	
-//	console.log(req);
+	console.log(req);
 	
 }).listen(8888);
 
