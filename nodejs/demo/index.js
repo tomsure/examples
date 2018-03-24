@@ -27,7 +27,7 @@ router.get('/mockapi', function(req, res, next) {
 	var Mock = require('mockjs');  
 	var data = Mock.mock(templet);   //Mock.mock(templet)用于根据数据模板生成数据
     var ret= JSON.stringify(data, null, 4)  //处理数据格式
-//  console.log(ret)
+    console.log(ret)
       ret=callback+'('+ret+')'  //jsonP的原理就是使用一个js方法的形式，将data数据放在括号中返回到前端，所以这里需要使用一对字符串拼接的括号，这里理解还不是很清楚
       
       
