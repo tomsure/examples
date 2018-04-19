@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		全局环境：
+		   1,安装nodejs,npm改为cnpm,
+		  
+		   
+		 
+		一、搭建express环境：
+		    1、在此目录使用express + “目录名（这里使用mockSocket）” 命令快速创建express项目
+		    2、cd  mockSocket进入创建的express 项目目录mockSocket
+		    3,执行npm install命令安装所需依赖，
+		    4、执行 node ./bin/www 测试express环境是否正常
+		二、搭建mockjs环境     
+		     1、安装mockjs,分别执行 cnpm install mockjs --save
+		                cnpm install mockjs
+		     2、安装supervisor 热部署模块
+		             执行命令  cnpm install supervisor -g
+		            安装后执行命令 supervisor ./bin/www 测试是否正常
+		        
+		        
+		<!--三、配置跨域：-->
+		    
+		三、配置socket.io和mockjs
+		     1、在mockSocket目录中安装socket.io
+		     2、将demo文件放到mockSocket目录下，执行supervisor server3.js,在浏览器输入：localhost:8888
+		     3、点击按钮，连接websocket 测试是否正常
+		     4、将mockjs的数据模板放到server3.js的connection事件函数中
+		     
+		             
+		             
+	</body>
+</html>
