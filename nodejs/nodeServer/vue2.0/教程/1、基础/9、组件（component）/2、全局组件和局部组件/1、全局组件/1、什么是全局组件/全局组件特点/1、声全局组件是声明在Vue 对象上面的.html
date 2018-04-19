@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../../dist/vue/dist/vue.js"></script>
+	<style type="text/css">
+		.dv1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<body>
+		  <div id="dv">
+		  	  <new-comp></new-comp>
+		  </div>
+	</body>
+	<script >
+		  Vue.component('new-comp',{   //组件new-comp 是绑定在Vue 对象上的
+		  	template:"<div class='dv1'>12345<div>"
+		  })
+		  
+		   new Vue({
+		   	 el:'#dv'
+		   })
+		   
+		   
+	</script>
+	     <!--从上面的例子可以看出，这里使用的是Vue.component()方法注册组件，因为Vue 是全局的对象，所以使用Vue.component()方法注册的组件是绑定在Vue 对象上面的-->
+</html>

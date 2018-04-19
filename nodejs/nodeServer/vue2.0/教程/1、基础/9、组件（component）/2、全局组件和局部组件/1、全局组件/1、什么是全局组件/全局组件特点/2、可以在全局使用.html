@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<script src="../../../../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<today-weather></today-weather>
+			<!--第一次使用-->
+		</div>
+		  <div id="dv1">
+		  	 <today-weather></today-weather>
+		  	 <!--第二次使用-->
+		  	  
+		  </div>
+	</body>
+	<script>
+		 Vue.component('today-weather',{
+		 	template:"<div style='color:red;'>今天下雨出不去</div>"
+		 })
+		  new Vue({
+		  	 el:'#dv',
+		  	 //第一次使用
+		  })
+		  new Vue({
+		  	el:'#dv1'
+		  	//第二次使用
+		  })
+	</script>
+	       <!--全局组件是可以在全局作用域任何位置中使用的，多次使用的时候，只需多次实例化即可-->
+	
+</html>

@@ -36,6 +36,17 @@ var socket = io.listen(httpServer);
 socket.sockets.on('connection', function(socket) {
 	
 	//socket
+	 console.log(1111)
+	
+	function myfunc(Interval){  //定时器函数
+ console.log("myfunc "+Interval);
+}
+var myInterval=setInterval(myfunc,1000,"Interval");
+function stopInterval(){
+ clearTimeout(myInterval);
+ //myInterval.unref();
+}
+setTimeout(stopInterval,1000);
 	
 	console.log('有人通过socket连接进来了');
 	

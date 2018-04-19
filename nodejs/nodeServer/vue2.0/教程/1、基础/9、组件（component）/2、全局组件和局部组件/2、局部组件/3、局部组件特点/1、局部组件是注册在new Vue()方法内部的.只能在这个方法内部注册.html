@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../../dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<my-weather></my-weather>
+		</div>
+		<div>
+			<my-weather></my-weather>
+			<!--这里就不会生效，因为my-weather是局部组件-->
+		</div>
+	</body>
+	<script>
+		 
+		   
+		 
+		  new Vue({
+		  	 el:'#dv',
+		  	 data:{
+		  	 	
+		  	 },
+		  	 components:{
+		  	 	'my-weather':{
+		   	     template:'<div>今天不下雨，出去玩吧</div>'
+		   }
+		  	 }
+		  })
+		  
+//		  局部组件只能在new Vue() 实例化方法内部注册
+	</script>
+	  
+</html>
