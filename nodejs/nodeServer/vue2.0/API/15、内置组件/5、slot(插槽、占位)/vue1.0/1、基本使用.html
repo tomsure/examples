@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<script src="../../../dist/vue1.0/vue.js"></script>
+	<body>
+		<template id="parent">
+			<div>
+				<h1>xxx</h1>
+				
+				<h2>123</h2>
+			</div>
+		</template>
+		
+		<div id="dv">
+			
+			 <parent>123qwq</parent>  <!--不生效-->
+			 
+		</div>
+		 <!--在普通情况下，模板文件中如果放了固定的内容，当在根组件中使用组件的时候，如果想在组件标签中加入内容无法加入的，例如上面的例子：第一个parent标签中加入123qwq不会显示，页面只会显示模板中的内容-->
+		<hr />
+		
+		
+		 <div id="dv1">
+		 	 <parent-a>00000000000</parent-a>  <!--生效-->
+		 </div>
+		
+		<template id="parent-a">
+			<div>
+				<h1>aaa</h1>
+				  <slot>333</slot> <!--默认333，如果组件标签不写内容，则显示这个值-->
+				<h2>bbb</h2>
+			</div>
+		</template>
+		
+		<!--如果需要在组件中插入某个单独的内容，可以使用slot ,slot相当于一个内置的标签，叫做插槽，可以在组件中插入内容，如果组件在根组件中编写后，需要在组件标签（这里的parent-a）中插入一段内容，例如28行需要插入一段数字，如果直接插入就会和上面第一个粒子相同，不会有显示，只会显示模板中的内容，为了达到这个目的，可以使用slot,方法是，在组件的模板中使用slot标签，里面写入自定义的内容，然后就可以在执行组件的时候在组件标签中插入需要插入的内容，如果不插入内容，则组件模板中的slot的内容就会作为默认值显示-->
+		
+		
+	</body>
+	<script>
+		  new Vue({
+		  	 el:'#dv',
+		  	 
+		  	 template:'#parent'
+		  })
+		  new Vue({
+		  	el:'#dv1',
+		  	template:'#parent-a'
+		  })
+	</script>
+</html>

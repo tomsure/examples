@@ -14,11 +14,12 @@
 		 var vm=new Vue({
 		 	  el:'#dv',
 		 	  data:{
-		 	  	msg:'aaaaa'
+		 	  	msg:'aaaaa'   //组件的数据
 		 	  },
 		 	  methods:{
 		 	  	ad:function(){
-		 	  		document.write("111")
+//		 	  		document.write("111")
+                  this.msg=111  //点击后把数据变成111
 		 	  	}
 		 	  }
 		 })

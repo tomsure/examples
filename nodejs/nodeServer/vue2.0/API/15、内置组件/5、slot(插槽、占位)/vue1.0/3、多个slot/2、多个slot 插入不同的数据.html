@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../dist/vue1.0/vue.js"></script>
+	<body>
+		<template id="tep">
+			<div>
+				
+				<ul>
+					
+					<slot name='solt-1'>默认1</slot>
+					<li>000</li>
+					
+					<li>000</li>
+					<li>000</li>
+					<slot name='solt-2'>默认2</slot>
+				</ul>
+				
+				
+			</div>
+			
+		</template>
+		<div id="dv">
+			<aaa>
+				<div class="dva" slot='solt-1'>插入数据1</div>
+				<div class="dvb" slot='solt-2'>插入数据2</div>
+			</aaa>
+			
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#dv',
+			components:{
+				'aaa':{
+					template:'#tep'
+				}
+			}
+		})
+		
+//		如果再组件中需要插入多条不同的数据,则可以执行以下步骤:
+//		   1,组件需要插入多少条不同的数据,则在组件中写入需要插入的数据,并在组件模板中编写对应数据的slot标签;
+//		   2,给模板中写入的slot 标签设置name 属性（自定义).
+//		   3,给组件中插入的每条数据设置slot 属性,属性值就是模板中的对应的slot 标签的name值
+		
+
+	</script>
+</html>

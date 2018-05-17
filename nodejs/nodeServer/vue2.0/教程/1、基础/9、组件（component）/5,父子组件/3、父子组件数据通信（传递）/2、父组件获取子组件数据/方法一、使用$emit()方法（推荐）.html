@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="dv">
+		<aaa></aaa>
+	</div>
+<template id="parent">
+	  <div class="box">
+	  	<h6>父组件  -->  {{parentData}} </h6>  
+	  	<bbb @child-msg='get'></bbb>  <!--第三步-->
+	  	
+	  </div>
+	  
+</template>
+<template id="child">
+	<div class="box1">
+		<h6>子组件</h6>
+	   <button @click="send">点击发送</button> <!--第一步3-->
+	</div>
+</template>
+</body>
+<script src="../../../../../../dist/vue1.0/vue.js"></script>
+<script >
+	    
+	var vm=new Vue({
+		el:'#dv',
+		components:{
+			'aaa':{
+				template:'#parent',
+				data:function(){
+					return {
+						'parentData':'父组件数据'   //父组件数据
+					}
+				},
+				methods:{
+				//第二步
+				get:function(msg){  //这里的msg 是子组件传递过来的数据
+						alert(msg) //弹出'子组件数据'
+                    this.parentData=msg  //将父组件数据设置为子组件的数据
+                     
+                       
+					}
+				},
+				components:{
+					'bbb':{
+						data:function(){
+							return {
+								msg:'子组件数据'
+							}
+						},
+						template:'#child',
+						methods:{
+					       send:function(){  //第一步1
+								this.$emit('child-msg',this.msg)  //第一步2
+							}
+						}
+					}
+				}
+			}
+		}
+	})
+	
+	
+/**
+ *
+ * 
+ *
+ * 父组件获取子组件步骤:
+ *      父组件获取子组件的方法原理是由子组件发送给父组件
+ *      步骤：在父组件已设置data数据的时候：
+ *          由于组件中的data选项中的json键值对就是组件的数据，所以：
+ *            1、在父子组件都有data选项设置了数据的情况下，在子组件中定义一个方法（methods中，例如这里的send）方法内部使用this.$emit()方法设置父组件需要的数据：
+ *           这个方法相当于是发送数据，两个参数，第一个参数是自定义的数据名称，第二个参数是发送的子组件的数据，使用this.+子组件数据名，（也就是data选项中设置的json数据的key值）
+ *           例如这里使用  this.$emit('child-msg',this.msg) 表示发送一条叫child-msg的数据到父组件，数据的内容是这个子组件的数据msg(所以叫this.msg)
+ * 
+ *           将这个send方法绑定在子组件模板内的按钮的点击事件上作为事件函数执行
+ * 
+ *           2、在父组件中设置一个方法，（名称自定义），方法的函数的第一个参数就是子组件传递过来的数据例如：
+ *              methods:  {
+					get:function(msg) {   //这里的msg 是子组件传递过来的数据
+						alert(msg) //弹出'子组件数据'
+                    
+                    }
+ *            
+ *           3、由于子组件使用的时候是嵌套在父组件的模板中的，所以这时候需要在嵌套在父组件模板中的子组件设置一个自定义事件：
+ *           使用@+事件名，这里的事件名就是上一步执行this.$emit() 方法中的自定义数据名，事件函数就是在父组件中设置的函数名，例如这里的get
+ *  
+ *          
+                    
+                    
+                此时就已经获取到了子组件的数据，可以在父组件的方法中进行一系列操作，例如将获取到的子组件数据设置为父组件的数据，此时父组件原来的数据就会被覆盖    
+ *           
+ *           
+ * 
+ *   总结：父组件获取子组件是使用子组件发送到父组件
+ 
+ 
+   */
+	  
+</script>
+
+    
+
+</html>
