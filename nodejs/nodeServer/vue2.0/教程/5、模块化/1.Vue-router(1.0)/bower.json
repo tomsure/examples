@@ -1,0 +1,17 @@
+{
+  "name": "1.Vue-router",
+  "authors": [
+    "tomsure <491583156@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

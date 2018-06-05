@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue1.0/vue.js"></script>
+	<script type="text/javascript" src="../js/vue-router/dist/vue-router.js">
+		
+	</script>
+	<body>
+		<div id="box">
+			<ul>
+				<li><a v-link="{path:'/home'}">主页</a></li>
+				<li><a v-link="{path:'/news'}">新闻</a></li>
+				  
+				     <!--v-link内格式是固定的，path后面的值使用/+关联组名称："{path:'/home'}"-->
+			</ul>
+			<div >
+				<router-view></router-view>
+			</div>
+		</div>
+	</body>
+	<script>
+//		 1.创建根组件
+		var app=Vue.extend()
+		//
+//		2,创建组件，这里是使用Vue.extend()方法创建组件，可以使用其他方式创建
+//		
+//		组件home
+		var Home=Vue.extend({
+			template:'<h3>我是主页</h3>'
+		})
+//		组件news
+		var News=Vue.extend({
+			template:'<h3>我是新闻</h3>'
+			
+			
+		})
+		
+		// 3.准备路由
+		  var router=new VueRouter();
+		  
+//		  4, 关联
+          router.map({
+          	'home':{
+          		component:Home
+          	},
+          	'news':{
+          		component:News
+          	}
+          })
+          
+//        5,启动路由
+          router.start(app,'#box')
+           
+           
+//         vue-router 实现基本步骤:
+//           一,准备:
+//           
+//           1,页面必须先引入vue.js 后引入vue-router.js;
+//            二,html页面:
+//           1,准备一个div  id 为box,box 中最外层放一个ul,一个div
+//           2, box 中的ul中的li 里的a 标签设置v-link 属性,先不设置值
+//           3,box 中ul 后面的div 里面写一个 router-view 的html 格式的标签
+//            三,js :
+//           1,创建根组件,并设置为一个变量,这里设置为app
+//           2, 创建组件,可以创建多个,html 中的ul 有多少个li 局可以创建多少个组件
+//           3,准备路由,使用 new VueRouter()方法 实例化路由,并设置为变量 router
+//           4,使用上一步实例化的路由router 执行map 方法将组件和根组件关联起来,map()方法中参数是一个json对象,里面用来设置组件,key 值是一个自定义的字符串,value 是自定义的组件内容:component:组件名
+//            将这一步设置的关联好的字符串名称填写到步骤二中第2步设置的v-link中作为值
+//             
+//           5,使用router.start()方法启动路由,这个方法第一个参数是根组件的变量名称,第二个参数是包裹组件的div box
+             
+           
+	</script>
+</html>
+         
