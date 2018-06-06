@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../dist/vue1.0/vue.js"></script>
+	<script type="text/javascript" src="../js/vue-router/dist/vue-router.js">
+		
+	</script>
+	<body>
+		<div id="box">
+			<ul>
+				<li><a v-link="{path:'/home'}">主页</a></li>
+				<li><a v-link="{path:'/news'}">新闻</a></li>
+				  
+				    
+			</ul>
+			<div >
+				<router-view></router-view>
+			</div>
+		</div>
+		<template id="news">
+			<h3>我是新闻</h3>
+		</template>
+		<template id="home">
+			<h3>我是主页</h3>
+			<div class="" >
+				<a v-link="{path:'/home/login'}">登陆</a>
+				<a v-link="{path:'/home/reg'}">注册</a>
+			</div>
+			<div>
+				<router-view></router-view>
+			</div>
+		</template>
+	</body>
+	<script>
+//		 1.创建根组件
+		var app=Vue.extend()
+		//
+//		2,创建组件，这里是使用Vue.extend()方法创建组件，可以使用其他方式创建
+//		
+//		组件home
+		var Home=Vue.extend({
+			template:'#home'
+		})
+//		组件news
+		var News=Vue.extend({
+			template:'#news'
+			
+			
+		})
+		
+		// 3.准备路由
+		  var router=new VueRouter();
+		  
+//		  4, 关联
+          router.map({
+          	'home':{
+          		component:Home,
+          		subRoutes:{   //设置路由嵌套
+          			'login':{
+          				component:{
+          					template:'<strong>我是登录信息</strong>'
+          				}
+          			},
+          			'reg':{
+          				component:{
+          					template:'<strong>我是注册信息</strong>'
+          				}
+          			}
+          		}
+          	},
+          	'news':{
+          		component:News
+          	}
+          })
+           
+//        5,启动路由
+          router.start(app,'#box')
+           
+          
+           
+
+//           一个页面可以出现多层路由,有点像多层tab标签一样,点击第一层后第一层跳出的内容还可以点击再跳出新的内容
+             
+//         路由嵌套步骤:
+//          1,在关联根组件和组件新的时候会使用router.map()方法将组件和根组件进行关联,嵌套组件的话,需要在这个方法中关联的那个组件内设置一个subRoutes选项,这个选项专门用于设置路由嵌套,里面可以设置component设置组件模板,methods 方法,等等,和创建组件设置现象的写法相同;
+//          2,在需要嵌套显示其他内容的组件的模板中,设置两个div,一个div里面编写a标签,同样设置v-link属性,值的写法和设置基本路由的时候形同,每个a标签的v-link中的path指向需要跳转到的组件中(这里说的组件是在subRoutes选项中设置的新的跳转位置)
+
+//     这就是路由嵌套,路由可以无限嵌套
+	</script>
+</html>
+         
