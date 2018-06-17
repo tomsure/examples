@@ -1,0 +1,8 @@
+基本项目结构
+
+|-index.html
+|-main.js 入口文件
+|-App.vue
+|-package.json工程文件（工程文件，项目依赖，名称，配置）
+    使用npm init --yes 自动生成
+|-webpack.config.js webpack 配置文件
