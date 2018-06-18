@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		有时候打包会出现打包错误，提示：
+		  WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/
+
+  此时可以查看输入打包命令后显示的版本号，一般是由于本地版本和全局版本不相同导致，输入打包命令时候，下面显示的是本地的版本号，出现这种情况就是使本地版本和全局版本相同
+  
+    并且   4.x 以后的版本打包命令不相同了，应该是：
+      npx webpack a.js --output-filename bundle.js --output-path . --mode development
+     
+     而3.x 的命令是：
+       webpack 被打包文件名     打包后的名称
+	</body>
+</html>

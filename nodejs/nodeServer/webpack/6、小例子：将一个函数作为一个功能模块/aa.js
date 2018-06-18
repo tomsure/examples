@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,32 +68,46 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 
+	var num1=document.getElementById("num1")
+var num2=document.getElementById("num2")
+var result=document.getElementById("result")
 
-    var res=__webpack_require__(2)
-         res.con
+var btn=document.getElementById("btn")
+
+   btn.onclick=function(){
+   	
+   	  res=__webpack_require__(1)   //引入模块
+   	 
+// 	result.value = parseInt(num1.value) + parseInt(num2.value)  //计算两个输入框的值的和
+
+     result.value=res.addnum(parseInt(num1.value),parseInt(num2.value))
+
+   	
+   }
+   
+
+
+
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(0);
-__webpack_require__(0);
-(function webpackMissingModule() { throw new Error("Cannot find module \"buildaa.js\""); }());
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports) {
 
 
-    var con=function(){
-    	document.write(111)
-    	}
-    
-module.exports={
-	cons:con()
-}
+   function add(n1,n2){
+   	  return n1+n2
+   }
+//    如果数据量比较大,还可以通过获取函数的实参arguments对象,来进行计算
+   
+   
+    //封装一个小的功能函数，在使用的时候调用，在需要修改的时候，只需要修改这里而不是修改整个js文件，比较方便
+   
+   module.exports={    // 输出
+   	addnum:add
+   }
+   
+
 
 
 /***/ })

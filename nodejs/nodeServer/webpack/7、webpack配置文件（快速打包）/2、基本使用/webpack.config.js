@@ -12,6 +12,6 @@ module.exports={
        
        //注意如果是在Windows环境下打包，windows路径需要将“\”改成“\\”
 		
-		filename:'build3.js'   //定义打包后的文件名称，也就是引入到页面的那个js文件名称
+		filename:'build5.js'   //定义打包后的文件名称，也就是引入到页面的那个js文件名称
 	}
 }
