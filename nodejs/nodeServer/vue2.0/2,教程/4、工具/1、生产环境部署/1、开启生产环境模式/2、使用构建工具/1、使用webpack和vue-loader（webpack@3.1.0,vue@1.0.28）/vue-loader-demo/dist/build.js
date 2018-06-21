@@ -73,24 +73,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
-//import Vue from "vue" //引入vue 库文件
-//import App from "./App.vue";  //引入vue文件
-//new Vue({
-//	el:'body',
-//	components:{
-//		app:"App"
-//	}
-//})
-//
-
-
-
+ //引入vue 库文件
+ //引入vue文件
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 	el: 'body',
 	components: {
-		app: __WEBPACK_IMPORTED_MODULE_1__App_vue___default.a
+		app: "App"
 	}
 });
+//
+//import Vue from 'vue'
+//import App from './App.vue'
+//
+//new Vue({
+//	el:'body',
+//	components:{
+//		app:App
+//	}
+//});
 
 /***/ }),
 /* 1 */
@@ -10535,9 +10535,7 @@ var __vue_script__, __vue_template__
 var __vue_styles__ = {}
 __webpack_require__(4)
 __vue_script__ = __webpack_require__(8)
-if (__vue_script__ &&
-    __vue_script__.__esModule &&
-    Object.keys(__vue_script__).length > 1) {
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] App.vue: named exports in *.vue files are ignored.")}
 __vue_template__ = __webpack_require__(9)
 module.exports = __vue_script__ || {}
@@ -10555,7 +10553,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-358826de/App.vue"
+  var id = "_v-44ed5064/App.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -10579,8 +10577,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./node_modules/_css-loader@0.28.11@css-loader/index.js!./node_modules/_vue-loader@8.5.4@vue-loader/lib/style-rewriter.js!./node_modules/_vue-loader@8.5.4@vue-loader/lib/selector.js?type=style&index=0!./App.vue", function() {
-			var newContent = require("!!./node_modules/_css-loader@0.28.11@css-loader/index.js!./node_modules/_vue-loader@8.5.4@vue-loader/lib/style-rewriter.js!./node_modules/_vue-loader@8.5.4@vue-loader/lib/selector.js?type=style&index=0!./App.vue");
+		module.hot.accept("!!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-rewriter.js!./node_modules/vue-loader/lib/selector.js?type=style&index=0!./App.vue", function() {
+			var newContent = require("!!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-rewriter.js!./node_modules/vue-loader/lib/selector.js?type=style&index=0!./App.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

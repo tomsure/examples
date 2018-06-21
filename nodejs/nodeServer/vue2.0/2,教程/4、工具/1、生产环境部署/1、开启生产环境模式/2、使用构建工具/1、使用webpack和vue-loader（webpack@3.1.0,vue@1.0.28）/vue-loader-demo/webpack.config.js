@@ -1,9 +1,10 @@
     var webpack=require('webpack')
+    var path=require('path')
 module.exports={
 	entry:'./main.js',
 	output:{
-		path:__dirname,
-		filename:'build.js'
+		path:path.resolve(__dirname,"dist"),
+		filename:'./build.js'
 	},
 	module:{
 		loaders:[
