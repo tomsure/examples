@@ -8,7 +8,7 @@ module.exports={
 	},
 	module:{
 		loaders:[
-		   {test:/\.vue$/,loader:"vue-loader"},
+		   {test:/\.vue$/,loader:"vue"},
 		   {test:/\.js$/,loader:'babel-loader',exclude:/node_modules/}
         
 //		   设置babel-loader,并设置过滤项,exclude选项用于设置过滤项
