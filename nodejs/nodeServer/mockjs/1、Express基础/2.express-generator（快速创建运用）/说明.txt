@@ -1,0 +1,6 @@
+0、安装nodejs express到全局
+1、在 nodejs 目录下输入express myapp命令，此时快速生成一个 名为myapp的项目目录
+2、使用cd命令进入 这个目录，并输入命令   npm install  这一步是用来安装应用所需要的依赖；
+3、启动项目  linux或者macos 系统输入：DEBUG=myapp npm start
+windows系统 输入命令：set DEBUG=myapp或者npm start
+  此时项目已经启动，可以在浏览器输入“http：//localhost:3000”查看

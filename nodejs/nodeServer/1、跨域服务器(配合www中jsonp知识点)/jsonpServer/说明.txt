@@ -1,3 +1,0 @@
-本服务器使用express搭建，使用mockjs模拟数据;
-
-jsonp知识点主要在routers目录下的index.js中配置，涉及到跨域
