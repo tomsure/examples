@@ -1,2 +1,2 @@
- npm install --save-dev  less
- npm install --save-dev  less-loader
+ cnpm install --save-dev  less
+ cnpm install --save-dev  less-loader
