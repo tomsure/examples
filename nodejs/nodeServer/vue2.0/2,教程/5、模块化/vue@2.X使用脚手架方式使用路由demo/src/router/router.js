@@ -7,7 +7,7 @@ import HelloWord from '../components/HelloWord'
 Vue.use(VueRouter)
 
 const routes = [{
-		path: '/',
+		path: '/',  //这里的path的值与显示组件内容中router-link的to的值必须一致
 		component: Home
 	},
 	{
