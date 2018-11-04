@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		路由重定向是在页面打开或者点击某个连接跳转的时候，可以设置指定的跳转路径，配置步骤如下：
+		  1、页面打开的时候，设置重定向配置如下：
+		    在router.js的routes数组中添加一个选项：
+		    <img src="01.png"/>
+
+		    {path:'*',redirect:'/home'}  <!--这里表示页面打开的时候跳转到home组件-->
+
+		  2、如果是点击某一个路由链接的时候跳转到指定路由，配置如下:
+		    {path:'/news',redirect:'/home'}  <!--这里就表示点击新闻路由链接的时候跳转到home路由组件-->
+
+
+
+	</body>
+</html>
