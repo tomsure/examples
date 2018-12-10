@@ -13,7 +13,10 @@
     <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
     <el-button @click="resetForm('ruleForm2')">重置</el-button>
   </el-form-item>
+   <el-button @click="toadd()">跳转</el-button>
 </el-form>
+
+
 </template>
 
 <script>
@@ -87,6 +90,9 @@
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+      toadd(){
+      	this.$router.push({name:'files'})
       }
     }
   }
