@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+            {{msg}}
+            <br />
+            ............................
+            <br />
+             {{msg | msgFormater}}
+
+		</div>
+	</body>
+	<script>
+		 Vue.filter('msgFormater',function(msg){
+                return msg.replace(/单纯/g,'邪恶')
+		 })
+		   //使用Vue.filter()方法，要放在new Vue前面，Vue.filter()方法第一个参数是一个字符串，是过滤器的名称，第二个参数是一个函数，函数的第一个参数是需要过滤的数据，，后面的参数可以自定义传递
+		  new Vue({
+		  	 el:'#dv',
+		  	 data(){
+		  	 	return{
+		  	 		msg:'曾经我也是一个单纯的少年，单纯的我，是世界上最单纯的人'
+	        	  	 	}
+    		  	 			  }
+
+
+
+		  })
+
+//		  过滤器的使用方法:
+//		    用处:1.用在{{}}符号中,
+//		         使用方法:
+//		             在组件中使用{{}}的时候,使用| 符号隔离,前面就是数据,后面就是过滤器,例如:
+//		                {{ data | formater}} ,这样数据data就会通过formatter处理后显示
+//
+//		         2,用在v-bind中
+
+
+	</script>
+</html>

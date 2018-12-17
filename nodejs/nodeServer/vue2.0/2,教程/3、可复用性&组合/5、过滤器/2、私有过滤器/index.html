@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+
+             {{str | strFormater1}}  <!--使用第一个-->
+
+             <br />
+             {{str | strFormater2}}  <!--使用第二个-->
+
+             <br />
+             {{str | strFormater1| strFormater2}}  <!--两个同时使用-->
+
+		</div>
+	</body>
+	<script>
+
+		  new Vue({
+		  	 el:'#dv',
+		  	 data(){
+		  	 	return{
+		  	 		str:'哈哈哈哈'
+	        	  	 	}
+    		  	 			  },
+    		  filters:{
+                strFormater1:function(data){
+                	return data + '!!!!!'
+                },
+                strFormater2:function(data){
+                	return data + '====='
+                }
+    		  }
+
+
+
+		  })
+
+//         私有过滤器是使用在组件内部的过滤器,只能在组件内部使用,使用语法如下:
+//           1,在new vue() 的选项中和data等数据平级的位置编写 filters,后面值是一个对象
+//           2,在对象内部写多个键值对,键是过滤器名称,值是一个函数,函数的第一个参数是被过滤的数据，第二个及更多个传递的参数
+//           3,使用过滤器方法和全局过滤器相同
+
+
+	</script>
+</html>

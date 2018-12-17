@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+            {{msg}}
+            <br />
+            ............................
+            <br />
+             {{msg | msgFormater('1111111') | test}}  <!--使用过滤器的时候传参-->
+
+		</div>
+	</body>
+	<script>
+		 Vue.filter('msgFormater',function(msg,data){
+                return msg.replace(/单纯/g,data)
+		 })
+
+         Vue.filter('test',function(msg){ //这里的msg就是 msgFormater过滤器处理后的数据
+         	 return  msg+ '***加在结尾的数据***'
+         })
+
+		  new Vue({
+		  	 el:'#dv',
+		  	 data(){
+		  	 	return{
+		  	 		msg:'曾经我也是一个单纯的少年，单纯的我，是世界上最单纯的人'
+	        	  	 	}
+    		  	 			  }
+
+
+
+		  })
+//		     一条数据可以使用多个过滤器,也就是多次使用Vue.filter()制作的过滤器,使用方法是在数据后面使用 | 隔开,后面一个过滤器是以前面一个过滤器过滤后的数据开始处理数据
+
+	</script>
+</html>

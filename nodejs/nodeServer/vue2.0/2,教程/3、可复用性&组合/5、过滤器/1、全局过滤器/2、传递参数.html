@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+            {{msg}}
+            <br />
+            ............................
+            <br />
+             {{msg | msgFormater('1111111','aaaaa')}}  <!--使用过滤器的时候传参-->
+
+		</div>
+	</body>
+	<script>
+		 Vue.filter('msgFormater',function(msg,data1,data2){
+                return msg.replace(/单纯/g,data1+data2)
+		 })
+
+//           可以给Vue.filter()方法的第二个参数也就是函数传递第二个参数,这个参数第一个参数是需要处理的数据,第二个参数可以自定义传递,可以传递一个或者多个变量,在使用过滤气的时候,自定义传参
+
+		  new Vue({
+		  	 el:'#dv',
+		  	 data(){
+		  	 	return{
+		  	 		msg:'曾经我也是一个单纯的少年，单纯的我，是世界上最单纯的人'
+	        	  	 	}
+    		  	 			  }
+
+
+
+		  })
+
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+
+             {{msg | msgFormater}} <!--使用了同一个过滤器-->
+
+		</div>
+		<div id="dv1">
+          {{dt | msgFormater }}  <!--使用了同一个过滤器-->
+		</div>
+	</body>
+	<script>
+		 Vue.filter('msgFormater',function(msg){
+                return msg + '*****过滤器数据***'
+		 })
+
+		  new Vue({
+		  	 el:'#dv',
+		  	 data(){
+		  	 	return{
+		  	 		msg:'曾经我也是一个单纯的少年，单纯的我，是世界上最单纯的人'
+	        	  	 	}
+    		  	 			  }
+
+
+
+		  })
+		  new Vue({
+		  	el:'#dv1',
+		  	data(){
+		  		return {
+		  			dt:' 第二条数据 '
+		  			}
+		  	}
+		  })
+
+
+//        全局过滤器就是可以全局使用的,所谓全局使用是所有的vue实例都可以使用的过滤器
+
+	</script>
+</html>
