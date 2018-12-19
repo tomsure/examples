@@ -1,7 +1,4 @@
 <template>
-	<div id="">
-       Action
-	</div>
 </template>
 
 <script>

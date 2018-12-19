@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-   <router-link to='/Action'>核心概念/Actoin</router-link>
-   <router-link to='/Getter'>核心概念/Getter</router-link>
-   <router-link to='/Module'>核心概念/Module</router-link>
-   <router-link to='Mutaion'>核心概念/Mutaion</router-link>
-   <router-link to='/State'>核心概念/State</router-link>
-   <router-link to=''></router-link>
-   <router-link to=''></router-link>
+   <button @click="$router.push({path:'/Action'})">核心概念/Actoin</button>
+   <button @click="$router.push({path:'/Getter'})">核心概念/Getter</button>
+   <button @click="$router.push({path:'/Module'})">核心概念/Module</button>
+   <button @click="$router.push({path:'/Mutaion'})">核心概念/Mutaion</button>
+   <button @click="$router.push({path:'/State'})">核心概念/State</button>
+
     <router-view style="border: 1px solid red; height: 600px;" />
   </div>
 </template>
