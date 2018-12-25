@@ -14,19 +14,12 @@ const routes=[
 {path:'/news',component:News,
 children:[
   {path:'child1',component:Child1},
-
   {path:'child2',component:Child2}
-]
-
+         ]
 }
-
-
-
-
 ]
 const router=new VueRouter({
 	routes,
 	mode:'history'
 })
-
 export default router

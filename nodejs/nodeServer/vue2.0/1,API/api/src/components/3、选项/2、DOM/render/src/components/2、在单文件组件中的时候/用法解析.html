@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+		方式一、在组件中使用的时候，直接在vue实例方法中用，写在vue实例方法中（如果是根组件，则是new Vue()方法里，如果是其他组件，则就是在export default里面）,此时组件中不能写template标签，否则render不运行，因为render就是代替templte 如下图：，
+		<br />
+		<img src="../images/02.png"/>
+		<br />
+		方式二：如果组件一定有template,则render方法需要写在vue实例化的components选项中子组件的配置中,如下图：
+		<br />
+		<img src="../images/01.png"/>
+          <br />
+       在根组件中：
+       <br />
+         <img src="../images/03.png"/>
+
+	</body>
+</html>

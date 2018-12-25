@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import Action from '@/components/核心概念/Action/Action'
 import Getter from '@/components/核心概念/Getter/Getter'
 import Module from '@/components/核心概念/Module/Module'
-import Mutation from '@/components/核心概念/Mutation/Mutation'
+import Mutation from '@/components/核心概念/Mutaion/Mutaion'
 import State from '@/components/核心概念/State/State'
 Vue.use(Router)
 
@@ -26,8 +26,8 @@ export default new Router({
       component:Module
     },
     {
-      path: '/Mutation',
-      name: 'Mutation',
+      path: '/Mutaion',
+      name: 'Mutaion',
       component:Mutation
     },
     {
