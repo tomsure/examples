@@ -23,7 +23,7 @@ router.get('/mockapi',function(req, res, next){
       ret=callback+'('+ret+')'  //jsonP的原理就是使用一个js方法的形式，将data数据放在括号中返回到前端，所以这里需要使用一对字符串拼接的括号，这里理解还不是很清楚
     res.send(ret); //这里就是处理过后给前台的响应数据
 })
-console.log('Listening on port 4000...');
+console.log('Listening on port 6000...');
 module.exports = router;
 
 
