@@ -7,7 +7,7 @@
 <script>
 export default {
   name: '',
-  data()     vue-cli { 
+  data() { 
     return {
 
     }

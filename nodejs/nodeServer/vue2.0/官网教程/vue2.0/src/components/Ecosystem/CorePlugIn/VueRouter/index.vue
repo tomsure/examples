@@ -1,7 +1,8 @@
 <template>
   <div class=""> 
-   我问问
    
+       vue-router
+
   </div>
 </template>
 
