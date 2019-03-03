@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		params传参实现步骤与query实现步骤相似，详细实现步骤要参考query传参
+
+		不同的地方如下：
+		   1、router-link的标签中使用params代替query
+                   <img src="imags/1.png"/>
+		   2、在跳转后的组件的钩子函数created函数中，通过后去this.$route.params来获取传递过来的对象数据
+                  <img src="imags/2..png"/>
+
+		 这种方式，在浏览器地址栏显示的方式是：
+		     localhost:1111/xxx/xxx//xxx的形式
+	</body>
+</html>
