@@ -4,7 +4,8 @@
    <router-link :to="{name:''}">API</router-link>
    <router-link :to="{name:'vueRouter'}">路由</router-link>
    <button @click="toVuex">vuex</button>
-    <router-view class="box"></router-view>
+   <router-view class="box"></router-view>  <!--router-view -->
+      <el-button>111</el-button>
   </div>
 </template>
 <script>
