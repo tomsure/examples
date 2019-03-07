@@ -324,7 +324,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 
 .slimScrollDiv >* {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .mini-navbar .nav-second-level li a {
@@ -7924,8 +7924,8 @@ body.skin-3 {
     background-color: #7266ba;
 }
 .hidden-folded{
-    color: #5c798f !important;
-    font-size: 12px;
+    color: white !important;
+    font-size: 18px;
     margin-left: 15px;
 }
 .line{
