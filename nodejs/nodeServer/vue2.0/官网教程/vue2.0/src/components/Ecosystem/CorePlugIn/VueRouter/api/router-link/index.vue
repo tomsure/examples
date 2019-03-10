@@ -1,6 +1,7 @@
 <template>
   <div class="">
-
+      <router-link :to='{name:"attr"}'>属性</router-link>
+      <router-view></router-view>
   </div>
 </template>
 

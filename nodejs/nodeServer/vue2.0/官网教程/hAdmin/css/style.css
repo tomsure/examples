@@ -4039,8 +4039,8 @@ code {
 .ibox-title {
     height: 41px;
     border-color: #edf1f2;
-    background-color: #f6f8f8;
-    color: #333;
+    background-color:#1c2b36;
+    color:whie;
     font-weight: 700;
     border-radius: 2px 2px 0 0;
     padding: 15px 15px 3px 15px;
@@ -4115,6 +4115,7 @@ table.table-mail tr td {
     padding: 0;
     text-overflow: ellipsis;
     float: left;
+    color: white;
 }
 
 .ibox-title .label {
@@ -7935,4 +7936,23 @@ body.skin-3 {
     overflow: hidden;
     font-size: 0;
     background-color: #131e26;
+}
+.CodeMirror.cm-s-ambiance{
+  border-radius: 10px;
+}
+.ibox-content-box{
+    min-height: 800px;
+}
+
+.mulu .ibox-content li{
+    /* list-style: none; */
+    
+}
+.mulu .ibox-content li a{
+    font-size: 16px;
+    text-decoration: underline;
+}
+.code_box{
+ margin-top: 20px;
+ margin-bottom: 20px;
 }

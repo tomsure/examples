@@ -3,9 +3,9 @@
    <router-link :to="{name:'vueRouter'}">教程</router-link>
    <router-link :to="{name:''}">API</router-link>
    <router-link :to="{name:'vueRouter'}">路由</router-link>
-   <button @click="toVuex">vuex</button>
+   <el-button @click="toVuex">vuex</el-button>
    <router-view class="box"></router-view>  <!--router-view -->
-      <el-button>111</el-button>
+    
   </div>
 </template>
 <script>
