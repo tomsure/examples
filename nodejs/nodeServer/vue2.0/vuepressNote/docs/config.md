@@ -12,5 +12,3 @@ features:
   details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
-<!--默认的主题提供了一个首页（Homepage）的布局 (用于 这个网站的主页)。
-想要使用它，需要在你的根级 README.md 的 YAML front matter 指定 home: true。  -->
