@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../dist/vue1.0/vue.js"></script>
+	<script type="text/javascript" src="js/vue-router/dist/vue-router.js">
+		
+	</script>
+	<body>
+		<div id="box">
+			<ul>
+				<li><a v-link="{path:'/home'}">主页</a></li>
+				<li><a v-link="{path:'/news'}">新闻</a></li>
+				  
+				     <!--v-link内格式是固定的，path后面的值使用/+关联组名称："{path:'/home'}"-->
+			</ul>
+			<div >
+				<router-view></router-view>
+			</div>
+		</div>
+	</body>
+	<script>
+//		 1.创建根组件
+		var app=Vue.extend()
+		//
+//		2,创建组件，这里是使用Vue.extend()方法创建组件，可以使用其他方式创建
+//		
+//		组件home
+		var Home=Vue.extend({
+			template:'<h3>我是主页</h3>'
+		})
+//		组件news
+		var News=Vue.extend({
+			template:'<h3>我是新闻</h3>'
+			
+			
+		})
+		
+		// 3.准备路由
+		  var router=new VueRouter();
+		  
+//		  4, 关联
+          router.map({
+          	'home':{
+          		component:Home
+          	},
+          	'news':{
+          		component:News
+          	}
+          })
+           
+//        5,启动路由
+          router.start(app,'#box')
+           
+           
+          router.redirect({
+          	'/':'/news'
+          })
+           
+           
+//         router.redirect({}) 方法用于设置页面启动后跳转到的位置,方法的参数是一个json对象,key值是开始跳转的根路径'/xxx',value是页面跳转到的组件关联后的名称，例如这里组件名是NEWS ，关联根组件的名称是news 所以就填写为'/news'，表示根组件下的news 组件
+	</script>
+</html>
+         

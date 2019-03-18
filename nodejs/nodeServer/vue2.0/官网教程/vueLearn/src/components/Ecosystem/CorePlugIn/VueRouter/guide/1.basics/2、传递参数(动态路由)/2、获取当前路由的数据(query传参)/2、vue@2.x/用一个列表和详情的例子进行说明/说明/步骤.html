@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 当路由跳转的时候，例如从列表页跳转到详情页，跳转到自后，详情页需要知道是从哪里来的数据才能展示相关对应的数据，这类似于使用a标签的时候，传递参数到另一个页面，在vue中可以使用 query来传递参数到另一个组件，这里使用列表跳转到详情的例子实现,实现步骤如下：
+		  1、在列表组件list中，在js的data函数中返回一个数组作为列表展示的数据：
+		     <img src="imags/2.png"/>
+		  2、在template中通过遍历的方式编写一个li标签，并通过差值的方式展示便利到的内容，然后再在li的后面写一个router-link标签，这样可以通过遍历生成多条包含列表数据和router-link标签的列表：
+		     <img src="imags/5、.png"/>
+
+          3、编写router-link标签内的内容：
+              <img src="imags/1.png"/>
+
+          4、在详情组件的js中的created钩子函数中，可以获取到list组件传递过来的数据：
+                <img src="imags/4.png"/>
+          5、当点击list列表中的链接跳转到详情的时候，详情组件会获取到list通过router-link中的query传递的数据对象
+              <img src="imags/3.png"/>
+              <img src="imags/7、.png"/>
+
+
+              这种方式，在浏览器地址栏显示的方式是：
+		     localhost:1111/xxx?xxx=xx?xxx=xxx的形式,也就是类似a标签传参的方式
+	</body>
+</html>
