@@ -8,7 +8,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      // name: 'Home',
       component: Home,
       children:[
         {
@@ -73,7 +73,25 @@ export default new Router({
                       {
                         path:'exact',
                         name:'exact',
-                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact')
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/exact'),
+                       redirect:'exact/test1',
+                       children:[
+                        {
+                          path:'test1',
+                          name:'test1',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test1')
+                        },
+                        {
+                          path:'test2',
+                          name:'test2',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test2')
+                        },
+                        {
+                          path:'test3',
+                          name:'test3',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test3')
+                        },
+                       ]
                       },
                       {
                         path:'replace',
