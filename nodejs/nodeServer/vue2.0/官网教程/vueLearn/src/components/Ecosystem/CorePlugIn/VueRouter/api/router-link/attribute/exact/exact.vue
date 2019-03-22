@@ -1,8 +1,8 @@
 <template>
   <div class="">
     <h3>Exact</h3>
-      <router-link to="/" exact >首页</router-link>
-      <router-link to="/vueRouter/api/routerLink/attr/exact/test1"   >test1</router-link>
+      <router-link to="/" active-class="aaa" exact >首页</router-link>
+      <router-link to="/vueRouter/api/routerLink/attr/exact/test1"  active-class="aaa"  >test1</router-link>
        <router-link to="/vueRouter/api/routerLink/attr/exact/test2" >test2</router-link>
         <router-link to="/vueRouter/api/routerLink/attr/exact/test3" >test3</router-link>
    <router-view></router-view>
@@ -15,6 +15,7 @@
     //     解决办法：
     //      给属性为“to=‘/’”的router-link的标签添加“exact”属性，这样其他标签激活的时候，这个就不会自动加上router-link-active类
 <script>
+
 export default {
   name: '',
   data() { 
