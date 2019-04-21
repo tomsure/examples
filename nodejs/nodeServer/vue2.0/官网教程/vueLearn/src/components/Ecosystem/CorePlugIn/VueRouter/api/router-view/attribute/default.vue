@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-     
+  <div class="middle">
+    默认组件
   </div>
 </template>
 
@@ -16,4 +16,9 @@ export default {
 </script>
 
 <style lang="" scoped>
+   .middle{
+     border: 1px solid red;
+     padding:100px;
+
+   }
 </style>

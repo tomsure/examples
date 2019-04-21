@@ -4,6 +4,10 @@ import Home from '@/components/Home'
 import vueRouter from  "@/components/Ecosystem/CorePlugIn/vueRouter/index"
 import Vuexx from  "@/components/Ecosystem/CorePlugIn/vuex/index"
 Vue.use(Router)
+  import name1 from '@/components/Ecosystem/CorePlugIn/vueRouter/api/router-view/attribute/name1'
+  import name2 from '@/components/Ecosystem/CorePlugIn/vueRouter/api/router-view/attribute/name2'
+  import nameDefault from '@/components/Ecosystem/CorePlugIn/vueRouter/api/router-view/attribute/default'
+ 
 export default new Router({
   routes: [
     {
@@ -20,7 +24,7 @@ export default new Router({
               path: 'api',
               name: 'api',
               component: () => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/index'),
-              // redirect:'api/routerLink',
+              redirect:'api/routerLink',
               children:[
                 
                 {
@@ -33,84 +37,84 @@ export default new Router({
                       path:'attr',
                       name:'attr',
                     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/index'),
-                    // children:[
-                    //   {
-                    //     path:'activeClsas',
-                    //     name:'activeClsas',
-                    //   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class'),
-                    //   children:[
-                    //     {
-                    //       path:'news',
-                    //       name:'news',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/news.vue'),
-                    //     },
-                    //     {
-                    //       path:'home',
-                    //       name:'home',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/home.vue'),
-                    //     },
-                    //     {
-                    //       path:'aboutUs',
-                    //       name:'aboutUs',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/aboutUs.vue'),
-                    //     },
-                    //     {
-                    //       path:'product',
-                    //       name:'product',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/product.vue'),
-                    //     }
-                    //   ]
-                    //   },
-                    //   {
-                    //     path:'append',
-                    //     name:'append',
-                    //   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/append')
-                    //   },
-                    //   {
-                    //     path:'event',
-                    //     name:'event',
-                    //   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/event')
-                    //   },
-                    //   {
-                    //     path:'exact',
-                    //     name:'exact',
-                    //   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/exact'),
-                    //    redirect:'exact/test1',
-                    //    children:[
-                    //     {
-                    //       path:'test1',
-                    //       name:'test1',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test1')
-                    //     },
-                    //     {
-                    //       path:'test2',
-                    //       name:'test2',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test2')
-                    //     },
-                    //     {
-                    //       path:'test3',
-                    //       name:'test3',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test3')
-                    //     },
-                    //    ]
-                    //   },
-                    //   {
-                    //     path:'replace',
-                    //     name:'replace',
-                    //   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/replace')
-                    //   },
-                    //   {
-                    //     path:'tag',
-                    //     name:'tag',
-                    //   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/tag')
-                    //   },
+                    children:[
+                      {
+                        path:'activeClsas',
+                        name:'activeClsas',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class'),
+                      children:[
+                        {
+                          path:'news',
+                          name:'news',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/news.vue'),
+                        },
+                        {
+                          path:'home',
+                          name:'home',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/home.vue'),
+                        },
+                        {
+                          path:'aboutUs',
+                          name:'aboutUs',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/aboutUs.vue'),
+                        },
+                        {
+                          path:'product',
+                          name:'product',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/active-class/product.vue'),
+                        }
+                      ]
+                      },
+                      {
+                        path:'append',
+                        name:'append',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/append')
+                      },
+                      {
+                        path:'event',
+                        name:'event',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/event')
+                      },
+                      {
+                        path:'exact',
+                        name:'exact',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/exact'),
+                       redirect:'exact/test1',
+                       children:[
+                        {
+                          path:'test1',
+                          name:'test1',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test1')
+                        },
+                        {
+                          path:'test2',
+                          name:'test2',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test2')
+                        },
+                        {
+                          path:'test3',
+                          name:'test3',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/exact/test3')
+                        },
+                       ]
+                      },
+                      {
+                        path:'replace',
+                        name:'replace',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/replace')
+                      },
+                      {
+                        path:'tag',
+                        name:'tag',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/tag')
+                      },
 
-                    //   {
-                    //     path:'to',
-                    //     name:'to',
-                    //     component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/to')
-                    //   }
-                    // ]
+                      {
+                        path:'to',
+                        name:'to',
+                        component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-link/attribute/to')
+                      }
+                    ]
                     },
                     {
                     path:'exactActiveClass',
@@ -143,6 +147,19 @@ export default new Router({
                   path: 'routerView',
                   name: 'routerView',
                   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/router-view/index'),
+                
+                  children:[
+                     { 
+                       path:'name',
+                       name: 'name',
+                      components:{
+                      a:name1,
+                      default:nameDefault,
+                      b:name2
+                    }
+                    
+                  }
+                  ]
                  },
                  {
                   path: 'componentInjection',
