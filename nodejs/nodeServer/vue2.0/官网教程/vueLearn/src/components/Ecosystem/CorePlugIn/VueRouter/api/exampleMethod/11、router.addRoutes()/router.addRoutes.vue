@@ -1,6 +1,6 @@
 <template>
   <div class="">
-
+   addRoutes 
   </div>
 </template>
 

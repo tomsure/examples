@@ -170,6 +170,49 @@ export default new Router({
                   path: 'constructionOptions',
                   name: 'constructionOptions',
                   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/index'),
+                  children:[
+                    {
+                      path: 'base',
+                      name: 'base',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/base'),
+                    },
+                    {
+                      path: 'fallback',
+                      name: 'fallback',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/fallback'),
+                    },
+                    {
+                      path: 'linkActiveClass',
+                      name: 'linkActiveClass',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/linkActiveClass'),
+                    },
+                    {
+                      path: 'linkExactActiveClass',
+                      name: 'linkExactActiveClass',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/linkExactActiveClass'),
+                    },
+                    {
+                      path: 'linkActiveClass',
+                      name: 'linkActiveClass',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/linkActiveClass'),
+                    },
+                    {
+                      path: 'linkActiveClass',
+                      name: 'linkActiveClass',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/linkActiveClass'),
+                    },
+                    {
+                      path: 'linkActiveClass',
+                      name: 'linkActiveClass',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/linkActiveClass'),
+                    },
+                    {
+                      path: 'linkActiveClass',
+                      name: 'linkActiveClass',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/constructionOptions/options/linkActiveClass'),
+                    },
+                  ]
+                  
                  },
                  {
                   path: 'exampleAttribute',
@@ -180,6 +223,78 @@ export default new Router({
                   path: 'exampleMethod',
                   name: 'exampleMethod',
                   component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/index'),
+                  children:[
+                    {
+                      path: 'beforeEach',
+                      name: 'beforeEach',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/1、router.beforeEach()/router.beforeEach.vue'),
+                    },
+                    {
+                      path: 'login',
+                      name: 'login',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/1、router.beforeEach()/login.vue'),
+                    },
+                    {
+                      path: 'beforeResolve',
+                      name: 'beforeResolve',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/2、router.beforeResolve/router.beforeResolve.vue'),
+                    },
+                    {
+                      path: 'afterEach',
+                      name: 'afterEach',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/3、router.afterEach()/router.afterEach.vue'),
+                    },
+                    {
+                      path: 'push',
+                      name: 'push',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/4、router.push()/push.vue'),
+                    },
+                    {
+                      path: 'replace1',
+                      name: 'replace1',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/5、router.replace()/router.replace.vue'),
+                    },
+                    {
+                      path: 'go',
+                      name: 'go',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/6、router.go()/router.go.vue'),
+                    },
+                    {
+                      path: 'back',
+                      name: 'back',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/7、router.back()/router.back.vue'),
+                    },
+                    {
+                      path: 'forward',
+                      name: 'forward',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/8、router.forward()/router.forward.vue'),
+                    },
+                    {
+                      path: 'getMatchedComponents',
+                      name: 'getMatchedComponents',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/9、router.getMatchedComponents()/router.getMatchedComponents.vue'),
+                    },
+                    {
+                      path: 'resolve',
+                      name: 'resolve',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/10、router.resolve()/router.resolve.vue'),
+                    },
+                    {
+                      path: 'addRoutes',
+                      name: 'addRoutes',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/11、router.addRoutes()/router.addRoutes.vue'),
+                    },
+                    {
+                      path: 'onReady',
+                      name: 'onReady',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/12、router.onReady()/router.onReady.vue'),
+                    },
+                    {
+                      path: 'onError',
+                      name: 'onError',
+                      component:() => import('@/components/Ecosystem/CorePlugIn/vueRouter/api/exampleMethod/13、router.onError()/router.onError.vue'),
+                    },
+                  ]
                  },
                  {
                   path: 'routingObject',

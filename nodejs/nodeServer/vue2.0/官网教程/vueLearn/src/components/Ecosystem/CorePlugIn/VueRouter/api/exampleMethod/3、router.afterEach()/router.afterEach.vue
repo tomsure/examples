@@ -1,6 +1,6 @@
 <template>
   <div class="">
-
+   afterEach
   </div>
 </template>
 
