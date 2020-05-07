@@ -1,14 +1,13 @@
-node_modules
 .DS_Store
 node_modules/
+/dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-**/*.log
-tests/**/coverage/
-tests/e2e/reports
+/test/unit/coverage/
+/test/e2e/reports/
 selenium-debug.log
-**/node_modules
+
 # Editor directories and files
 .idea
 .vscode
@@ -16,7 +15,3 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
-*.local
-
-package-lock.json
-yarn.lock
