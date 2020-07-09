@@ -141,6 +141,7 @@ version-sub-directory.js
 version-update-shrinkwrap.js
 view.js
 whoami.js
+node_modules/**
 zz-cleanup.js
 /nodejs/node_modules/npm/bin/read-package-json.js
 /nodejs/node_modules/npm/cli.js

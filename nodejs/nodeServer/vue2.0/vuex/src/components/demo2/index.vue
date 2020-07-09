@@ -32,9 +32,17 @@
                 <div>{{`reportCenter.data1.name: ${this.$store.state.reportCenter.data1.name}`}}</div>
                 <div>{{`reportCenter.data1.age: ${this.$store.state.reportCenter.data1.age}`}}</div>
                 <div>{{`reportCenter.data1.num: ${this.$store.state.reportCenter.data1.num}`}}</div>
-                 
-            </div>
-
+                <div>{{`user.uname: ${this.$store.state.user.uname}`}}</div>
+           </div>
+           <div class="border-box">
+               <div>
+                   <button @click="setStr">点击按钮获取str的值</button>
+               </div>
+                <div>{{`str: ${this.$store.state.reportCenter.data1.str}`}}</div>
+           </div>
+           <div class="border-box"> 
+                 <div>{{`getters: ${this.$store.getters["reportCenter/data1/getState"]}`}}</div>
+           </div>
 
        </div>
      </div>
@@ -58,6 +66,9 @@ export default {
          ...mapGetters(['test'])
     },
     methods:{
+        setStr(){
+         this.$store.commit({type:'reportCenter/data1/setStr2',data:500})
+        },
         handleAdd(){
          this.$store.commit('add',100)
         },

@@ -9,7 +9,8 @@ import user from './modules/user'
 import queryCenter from './modules/queryCenter/index'
 import reportCenter from './modules/reportCenter/index'
     Vue.use(Vuex)
-    const store=new Vuex.Store({ state,
+    const store=new Vuex.Store({ 
+                                 state,
                                  mutations,
                                  getters,
                                  actions,

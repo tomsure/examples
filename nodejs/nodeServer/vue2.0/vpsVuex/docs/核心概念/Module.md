@@ -149,7 +149,28 @@ export default{
 这种其实和第2中相同，只不过是第二种把action,state状态对象放在了单独的js 文件里
 ## 三，模块的局部状态对象的定义
 ### 1,getter
+getter 的话，他会有三个参数，第一个是模块内的 state，第二个是 模块内的 getters，第三个是根节点状态state:rootState,第四个是根节点的getters:rootGetters,例如模块data1.js: 
 ```javascript
+export default {
+  namespaced:true,
+    state:{
+      name:100,
+      age:200,
+      num:100,
+      str:''
+    },
+    mutations:{
+   
+    },
+    actions:{
+    
+    },
+    getters:{
+      getState(state, getters, rootState,rootGetters){  //getters方法，rootState指的是全局中的state
+       state.str=`state:${},getters:${getters},rootStete:${rootState},rootGetters${rootGetters}` 
+      }
+    }
+     }
 
 ```
 ### 2,mutation
@@ -166,20 +187,114 @@ export default{
 ### 0，为何要使用命名空间？
 
 ### 1，设置命名空间
-```javascript
-```
-### 2，访问设置了命名空间的模块
-```javascript
-```
-### 3，模块中的辅助函数的使用
 
 ```javascript
 ```
-### 4，在带命名空间的模块内访问全局内容
+### 2，组件中访问设置了命名空间的模块的状态对象
+0，访问state:
+```vue
+ <div class="border-box">
+                <div>{{`reportCenter.data1.name: ${this.$store.state.reportCenter.data1.name}`}}</div>
+                <div>{{`reportCenter.data1.age: ${this.$store.state.reportCenter.data1.age}`}}</div>
+                <div>{{`reportCenter.data1.num: ${this.$store.state.reportCenter.data1.num}`}}</div>
+                <div>{{`user.uname: ${this.$store.state.user.uname}`}}</div>
+           </div>
+```
+使用this.$store.state后面+模块名称
+1,执行dispatch
+
+methods:{
+  setStr(){
+    this.$store.dispatch({type:'reportCenter/data1/setStr1',data:500}) 
+      }
+    }
+```
+或者：
+```javascript
+methods:{
+  setStr(){
+    this.$store.dispatch('reportCenter/data1/setStr1',{data:500})
+      }
+    }
+```
+第一个参数是触发的action中的方法名，但是需要带上模块名称，例如这里使用了“reportCenter/data1/setStr1”，标识执行了模块reportCenter下面的模块data1的actions 方法 setStr1 
+
+2,执行commit
+```javascript
+methods:{
+ setStr2(){
+         this.$store.commit({type:'reportCenter/data1/setStr2',data:500})
+        }
+     }
+```
+和dispatch的参数用法相同
+
+3，访问getters:
+```vue
+ <div class="border-box"> 
+    <div>{{`getters: ${this.$store.getters["reportCenter/data1/getState"]}`}}</div>
+</div>
+```
+```javascript
+
+```
+...mapState()
+```javascript
+  computed:{
+     ...mapState('reportCenter/data1', {
+       name:state=>state.reportCenter/data1.name,
+       age:state=>state.reportCenter/data1.age,
+       num:state=>state.reportCenter/data1.num
+      })
+  }
+```
+...mapAction()
+```javascript
+...mapActions([
+    'reportCenter/data1/aa', 
+    'reportCenter/data1/bb' 
+  ])
+```
+mapGetters()
 ```javascript
 ```
-### 5，将模块内的 action 注册为全局
-### 6，使用createNamespacedHelpers映射到命名空间
+mapMutations()
+```javascript
+```
+
+也是前面加上模块名称
+### 3，模块中的辅助函数的使用
+上面的方式会计较繁琐，可以使用以下方式，模块名作为第一个参数，后面是具体的数据或者方法
+...mapState()
+```javascript
+computed:{
+     ...mapState('reportCenter/data1', {
+       name:state=>state.name,
+       age:state=>state.age,
+       num:state=>state.num,
+      })
+  }
+```
+...mapAction()
+```javascript
+...mapActions('reportCenter/data1',[
+    'aa', 
+    'bb' 
+  ])
+```
+只设置第一个参数为模块名称，中括号里面写方法名称
+mapGetters()
+```javascript
+```
+mapMutations()
+```javascript
+```
+### 4，使用createNamespacedHelpers映射到命名空间
+
+### 5，在带命名空间的模块内访问全局内容
+```javascript
+```
+### 6，将模块内的 action 注册为全局
 ### 7，插件开发者的注意事项
 ## 六，模块动态注册
 ### 1,注册

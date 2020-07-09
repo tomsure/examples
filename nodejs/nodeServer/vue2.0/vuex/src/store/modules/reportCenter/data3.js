@@ -1,5 +1,6 @@
 
 export default {
+  namespaced:true,
     state:{
       name3:100,
       age3:200,
