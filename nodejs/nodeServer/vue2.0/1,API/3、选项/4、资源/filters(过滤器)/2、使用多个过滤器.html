@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			{{msg | toupper | blod}} <br/>  
+			  <!--页面显示A-->
+			
+		</div>
+	</body>
+	<script>
+		  new Vue({
+		  	 el:'#dv',
+		  	 data:{
+		  	 	msg:'abcdefg',
+		  	    
+		  	 },
+		  	 filters:{
+		  	 	toupper:function(value){
+		  	 		return value.toUpperCase()
+		  	 	},
+		  	 	blod:function(value){
+		  	 		return value.charAt(0)   //返回abcdefg中的第一个字符
+		  	 	}
+		  	 	
+		  	 }
+		  })
+	</script>
+	
+	    <!--vue在页面中可以设置多个过滤器，具体用法是使用多个 | 符号标注，每个过滤器进行转换数据是在上一步计算转换的基础上进行的-->
+</html>

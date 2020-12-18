@@ -1,17 +1,21 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <div class="home"></div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { onMounted, onUpdated, onUnmounted } from "vue";
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
+  setup() {
+    onMounted(() => {
+      console.log("mounted!");
+    });
+    onUpdated(() => {
+      console.log("updated!");
+    });
+    onUnmounted(() => {
+      console.log("unmounted!");
+    });
   },
 };
 </script>

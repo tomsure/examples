@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../../../../vue2.0/dist/vue.js"></script>
+	<body>
+		<div id="dv">
+			<input type="text" v-model="msg" />
+			 {{msg}}
+			<!--<br/>
+			<select name="" v-model="">
+				<option value="">1</option>
+			</select>
+			<br/>
+			<textarea name="" v-model="" rows="20" cols="30"></textarea>-->
+		</div>
+		
+	</body>
+	<script>
+		  new Vue({
+		  	 el:'#dv',
+		  	 data:{
+		  	 	msg:'aa'
+		  	 },
+		  	 
+		  })
+		  
+
+	</script>
+	  <!--v-modal用于为页面输入框进行数据绑定-->
+</html>
